@@ -20,7 +20,7 @@ struct DanaRSv3Explaination: View {
             
             ScrollView {
                 VStack(alignment: .leading) {
-                    Text(LocalizedString("After setting up the insulin type and bolus speed, you will see all the found Dana pumps. Select the pump you want to link with iAPS.", comment: "General subtext for dana"))
+                    Text(LocalizedString("After setting up the insulin type and bolus speed, you will see all the found Dana pumps. Select the pump you want to link with Loop.", comment: "General subtext for dana"))
                     
                     HStack {
                         Spacer()
@@ -32,7 +32,7 @@ struct DanaRSv3Explaination: View {
                     }
                     .padding(.vertical, 10)
                     
-                    Text(LocalizedString("During the pairing process, your DanaRS v3 will show a pairing prompt while you iPhone will show a prompt for two pairing codes. On your pump, select OK and type the two codes on your iPhone. After that, iAPS is ready to communicate with your DanaRS v3", comment: "Subtext for danars v3"))
+                    Text(LocalizedString("During the pairing process, your DanaRS v3 will show a pairing prompt while you iPhone will show a prompt for two pairing codes. On your pump, select OK and type the two codes on your iPhone. After that, Loop is ready to communicate with your DanaRS v3", comment: "Subtext for danars v3"))
                     
                     Spacer()
                 }

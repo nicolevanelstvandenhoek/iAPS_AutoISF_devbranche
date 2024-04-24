@@ -23,7 +23,7 @@ struct DanaRSv1Explaination: View {
                     Text(LocalizedString("Before starting with the pairing process, it is recommended to check, and if needed update, the pump password. You can do this by going to the pump settings -> user settings -> password. The default password is 1234, if this is your password, please consider changing it", comment: "check password text for danars v1"))
                         .padding(.bottom)
                     
-                    Text(LocalizedString("After setting up the insulin type and bolus speed, you will see all the found Dana pumps. Select the pump you want to link with iAPS.", comment: "General subtext for dana"))
+                    Text(LocalizedString("After setting up the insulin type and bolus speed, you will see all the found Dana pumps. Select the pump you want to link with Loop.", comment: "General subtext for dana"))
                     
                     HStack {
                         Spacer()
@@ -35,7 +35,7 @@ struct DanaRSv1Explaination: View {
                     }
                     .padding(.vertical, 10)
                     
-                    Text(LocalizedString("During the pairing process, your DanaRS v3 will show a pairing prompt while you iPhone will show a prompt for a pairing code. On your pump, select OK and type the code on your iPhone. After that, iAPS is ready to communicate with your DanaRS v1", comment: "Subtext for danars v1"))
+                    Text(LocalizedString("During the pairing process, your DanaRS v3 will show a pairing prompt while you iPhone will show a prompt for a pairing code. On your pump, select OK and type the code on your iPhone. After that, Loop is ready to communicate with your DanaRS v1", comment: "Subtext for danars v1"))
                     
                     Spacer()
                 }

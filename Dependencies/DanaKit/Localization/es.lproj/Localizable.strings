@@ -20,7 +20,7 @@
 "Setting up DanaRS v1" = "Configurando DanaRS v1"
 
 /* Subtext for danars v1 */
-"During the pairing process, your DanaRS v3 will show a pairing prompt while you iPhone will show a prompt for a pairing code. On your pump, select OK and type the code on your iPhone. After that, iAPS is ready to communicate with your DanaRS v1" = "Durante el proceso de emparejamiento, su DanaRS v3 mostrará un mensaje de emparejamiento mientras que su iPhone mostrará un mensaje para un código de emparejamiento. En su bomba, seleccione Aceptar y escriba el código en su iPhone. Después de eso, iAPS está listo para comunicarse con su DanaRS v1."
+"During the pairing process, your DanaRS v3 will show a pairing prompt while you iPhone will show a prompt for a pairing code. On your pump, select OK and type the code on your iPhone. After that, Loop is ready to communicate with your DanaRS v1" = "Durante el proceso de emparejamiento, su DanaRS v3 mostrará un mensaje de emparejamiento mientras que su iPhone mostrará un mensaje para un código de emparejamiento. En su bomba, seleccione Aceptar y escriba el código en su iPhone. Después de eso, Loop está listo para comunicarse con su DanaRS v1."
 
 /* check password text for danars v1 */
 "Before starting with the pairing process, it is recommended to check, and if needed update, the pump password. You can do this by going to the pump settings -> user settings -> password. The default password is 1234, if this is your password, please consider changing it" = "Antes de comenzar con el proceso de emparejamiento, se recomienda verificar y, si es necesario, actualizar la contraseña de la bomba. Puede hacerlo yendo a la configuración de la bomba -&gt; configuración de usuario -&gt; contraseña. La contraseña predeterminada es 1234, si esta es su contraseña, considere cambiarla"
@@ -35,16 +35,16 @@
 "Setting up DanaRS v3" = "Configurando DanaRS v3"
 
 /* Subtext for danars v3 */
-"During the pairing process, your DanaRS v3 will show a pairing prompt while you iPhone will show a prompt for two pairing codes. On your pump, select OK and type the two codes on your iPhone. After that, iAPS is ready to communicate with your DanaRS v3" = "Durante el proceso de emparejamiento, su DanaRS v3 mostrará un mensaje de emparejamiento mientras que su iPhone mostrará un mensaje para dos códigos de emparejamiento. En su bomba, seleccione Aceptar y escriba los dos códigos en su iPhone. Después de eso, iAPS está listo para comunicarse con su DanaRS v3."
+"During the pairing process, your DanaRS v3 will show a pairing prompt while you iPhone will show a prompt for two pairing codes. On your pump, select OK and type the two codes on your iPhone. After that, Loop is ready to communicate with your DanaRS v3" = "Durante el proceso de emparejamiento, su DanaRS v3 mostrará un mensaje de emparejamiento mientras que su iPhone mostrará un mensaje para dos códigos de emparejamiento. En su bomba, seleccione Aceptar y escriba los dos códigos en su iPhone. Después de eso, Loop está listo para comunicarse con su DanaRS v3."
 
 /* Title for dana-i explaination */
 "Setting up Dana-i" = "Configurando Dana-i"
 
 /* General subtext for dana */
-"After setting up the insulin type and bolus speed, you will see a screen with all found Dana pumps. Select the pump you want to link with iAPS." = "Después de configurar el tipo de insulina y la velocidad del bolo, verá una pantalla con todas las bombas Dana encontradas. Seleccione la bomba que desea vincular con iAPS."
+"After setting up the insulin type and bolus speed, you will see a screen with all found Dana pumps. Select the pump you want to link with Loop." = "Después de configurar el tipo de insulina y la velocidad del bolo, verá una pantalla con todas las bombas Dana encontradas. Seleccione la bomba que desea vincular con Loop."
 
 /* Subtext for dana-i */
-"During the pairing process, your Dana-i will show a pairing prompt while you iPhone will show a prompt for a pairing code. On you pump, select OK and type the 6-digit code in screen on your iPhone. After that, iAPS is ready to communicate with your Dana-i" = "Durante el proceso de emparejamiento, su Dana-i mostrará un mensaje de emparejamiento mientras que su iPhone mostrará un mensaje para un código de emparejamiento. En su bomba, seleccione Aceptar y escriba el código de 6 dígitos en la pantalla de su iPhone. Después de eso, iAPS está listo para comunicarse con su Dana-i."
+"During the pairing process, your Dana-i will show a pairing prompt while you iPhone will show a prompt for a pairing code. On you pump, select OK and type the 6-digit code in screen on your iPhone. After that, Loop is ready to communicate with your Dana-i" = "Durante el proceso de emparejamiento, su Dana-i mostrará un mensaje de emparejamiento mientras que su iPhone mostrará un mensaje para un código de emparejamiento. En su bomba, seleccione Aceptar y escriba el código de 6 dígitos en la pantalla de su iPhone. Después de eso, Loop está listo para comunicarse con su Dana-i."
 
 /* Dana-i/RS invalid ble5 keys */
 "ERROR: Failed to pair device" = "ERROR: No se pudo emparejar el dispositivo"
@@ -388,7 +388,7 @@
 "Yes, Enable silent tones" = "Sí, habilitar tonos silenciosos"
 
 /* Description for basal profile number */
-"Set the basal profile the pump should use. Note, that it will overwrite the profile that is in the pump, with the one in iAPS" = "Establezca el perfil basal que debe utilizar la bomba. Tenga en cuenta que sobrescribirá el perfil que está en la bomba, con el que está en iAPS"
+"Set the basal profile the pump should use. Note, that it will overwrite the profile that is in the pump, with the one in Loop" = "Establezca el perfil basal que debe utilizar la bomba. Tenga en cuenta que sobrescribirá el perfil que está en la bomba, con el que está en Loop"
 
 
 /* Error message for reservoir view when reservoir empty

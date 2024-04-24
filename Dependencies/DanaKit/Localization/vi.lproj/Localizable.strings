@@ -20,7 +20,7 @@
 "Setting up DanaRS v1" = "Thiết lập DanaRS v1"
 
 /* Subtext for danars v1 */
-"During the pairing process, your DanaRS v3 will show a pairing prompt while you iPhone will show a prompt for a pairing code. On your pump, select OK and type the code on your iPhone. After that, iAPS is ready to communicate with your DanaRS v1" = "Trong quá trình ghép nối, DanaRS v3 của bạn sẽ hiển thị lời nhắc ghép nối trong khi iPhone của bạn sẽ hiển thị lời nhắc về mã ghép nối. Trên máy bơm của bạn, chọn OK và nhập mã trên iPhone của bạn. Sau đó, iAPS sẵn sàng liên lạc với DanaRS v1 của bạn"
+"During the pairing process, your DanaRS v3 will show a pairing prompt while you iPhone will show a prompt for a pairing code. On your pump, select OK and type the code on your iPhone. After that, Loop is ready to communicate with your DanaRS v1" = "Trong quá trình ghép nối, DanaRS v3 của bạn sẽ hiển thị lời nhắc ghép nối trong khi iPhone của bạn sẽ hiển thị lời nhắc về mã ghép nối. Trên máy bơm của bạn, chọn OK và nhập mã trên iPhone của bạn. Sau đó, Loop sẵn sàng liên lạc với DanaRS v1 của bạn"
 
 /* check password text for danars v1 */
 "Before starting with the pairing process, it is recommended to check, and if needed update, the pump password. You can do this by going to the pump settings -> user settings -> password. The default password is 1234, if this is your password, please consider changing it" = "Trước khi bắt đầu quá trình ghép nối, bạn nên kiểm tra và cập nhật mật khẩu máy bơm nếu cần. Bạn có thể thực hiện việc này bằng cách vào cài đặt máy bơm -&gt; cài đặt người dùng -&gt; mật khẩu. Mật khẩu mặc định là 1234, nếu đây là mật khẩu của bạn, vui lòng cân nhắc việc thay đổi nó"
@@ -35,16 +35,16 @@
 "Setting up DanaRS v3" = "Thiết lập DanaRS v3"
 
 /* Subtext for danars v3 */
-"During the pairing process, your DanaRS v3 will show a pairing prompt while you iPhone will show a prompt for two pairing codes. On your pump, select OK and type the two codes on your iPhone. After that, iAPS is ready to communicate with your DanaRS v3" = "Trong quá trình ghép nối, DanaRS v3 của bạn sẽ hiển thị lời nhắc ghép nối trong khi iPhone của bạn sẽ hiển thị lời nhắc về hai mã ghép nối. Trên máy bơm của bạn, chọn OK và nhập hai mã trên iPhone của bạn. Sau đó, iAPS đã sẵn sàng giao tiếp với DanaRS v3 của bạn"
+"During the pairing process, your DanaRS v3 will show a pairing prompt while you iPhone will show a prompt for two pairing codes. On your pump, select OK and type the two codes on your iPhone. After that, Loop is ready to communicate with your DanaRS v3" = "Trong quá trình ghép nối, DanaRS v3 của bạn sẽ hiển thị lời nhắc ghép nối trong khi iPhone của bạn sẽ hiển thị lời nhắc về hai mã ghép nối. Trên máy bơm của bạn, chọn OK và nhập hai mã trên iPhone của bạn. Sau đó, Loop đã sẵn sàng giao tiếp với DanaRS v3 của bạn"
 
 /* Title for dana-i explaination */
 "Setting up Dana-i" = "Thiết lập Dana-i"
 
 /* General subtext for dana */
-"After setting up the insulin type and bolus speed, you will see a screen with all found Dana pumps. Select the pump you want to link with iAPS." = "Sau khi thiết lập loại insulin và tốc độ truyền nhanh, bạn sẽ thấy một màn hình hiển thị tất cả các máy bơm Dana được tìm thấy. Chọn máy bơm bạn muốn liên kết với iAPS."
+"After setting up the insulin type and bolus speed, you will see a screen with all found Dana pumps. Select the pump you want to link with Loop." = "Sau khi thiết lập loại insulin và tốc độ truyền nhanh, bạn sẽ thấy một màn hình hiển thị tất cả các máy bơm Dana được tìm thấy. Chọn máy bơm bạn muốn liên kết với Loop."
 
 /* Subtext for dana-i */
-"During the pairing process, your Dana-i will show a pairing prompt while you iPhone will show a prompt for a pairing code. On you pump, select OK and type the 6-digit code in screen on your iPhone. After that, iAPS is ready to communicate with your Dana-i" = "Trong quá trình ghép nối, Dana-i của bạn sẽ hiển thị lời nhắc ghép nối trong khi iPhone của bạn sẽ hiển thị lời nhắc về mã ghép nối. Khi bạn bơm, chọn OK và nhập mã gồm 6 chữ số vào màn hình trên iPhone của bạn. Sau đó, iAPS sẵn sàng liên lạc với Dana-i của bạn"
+"During the pairing process, your Dana-i will show a pairing prompt while you iPhone will show a prompt for a pairing code. On you pump, select OK and type the 6-digit code in screen on your iPhone. After that, Loop is ready to communicate with your Dana-i" = "Trong quá trình ghép nối, Dana-i của bạn sẽ hiển thị lời nhắc ghép nối trong khi iPhone của bạn sẽ hiển thị lời nhắc về mã ghép nối. Khi bạn bơm, chọn OK và nhập mã gồm 6 chữ số vào màn hình trên iPhone của bạn. Sau đó, Loop sẵn sàng liên lạc với Dana-i của bạn"
 
 /* Dana-i/RS invalid ble5 keys */
 "ERROR: Failed to pair device" = "LỖI: Không thể ghép nối thiết bị"
@@ -388,7 +388,7 @@
 "Yes, Enable silent tones" = "Có, Bật âm im lặng"
 
 /* Description for basal profile number */
-"Set the basal profile the pump should use. Note, that it will overwrite the profile that is in the pump, with the one in iAPS" = "Đặt cấu hình cơ bản mà máy bơm nên sử dụng. Lưu ý rằng nó sẽ ghi đè lên cấu hình trong máy bơm bằng cấu hình trong iAPS"
+"Set the basal profile the pump should use. Note, that it will overwrite the profile that is in the pump, with the one in Loop" = "Đặt cấu hình cơ bản mà máy bơm nên sử dụng. Lưu ý rằng nó sẽ ghi đè lên cấu hình trong máy bơm bằng cấu hình trong Loop"
 
 
 /* Error message for reservoir view when reservoir empty

@@ -20,7 +20,7 @@
 "Setting up DanaRS v1" = "Nastavení DanaRS v1"
 
 /* Subtext for danars v1 */
-"During the pairing process, your DanaRS v3 will show a pairing prompt while you iPhone will show a prompt for a pairing code. On your pump, select OK and type the code on your iPhone. After that, iAPS is ready to communicate with your DanaRS v1" = "Během procesu párování váš DanaRS v3 zobrazí výzvu k párování, zatímco váš iPhone zobrazí výzvu k zadání párovacího kódu. Na pumpě vyberte OK a zadejte kód na svém iPhone. Poté je iAPS připraven komunikovat s vaším DanaRS v1"
+"During the pairing process, your DanaRS v3 will show a pairing prompt while you iPhone will show a prompt for a pairing code. On your pump, select OK and type the code on your iPhone. After that, Loop is ready to communicate with your DanaRS v1" = "Během procesu párování váš DanaRS v3 zobrazí výzvu k párování, zatímco váš iPhone zobrazí výzvu k zadání párovacího kódu. Na pumpě vyberte OK a zadejte kód na svém iPhone. Poté je Loop připraven komunikovat s vaším DanaRS v1"
 
 /* check password text for danars v1 */
 "Before starting with the pairing process, it is recommended to check, and if needed update, the pump password. You can do this by going to the pump settings -> user settings -> password. The default password is 1234, if this is your password, please consider changing it" = "Před zahájením procesu párování se doporučuje zkontrolovat a v případě potřeby aktualizovat heslo pumpy. Můžete to udělat tak, že přejdete do nastavení pumpy -&gt; uživatelská nastavení -&gt; heslo. Výchozí heslo je 1234, pokud je toto vaše heslo, zvažte jeho změnu"
@@ -35,16 +35,16 @@
 "Setting up DanaRS v3" = "Nastavení DanaRS v3"
 
 /* Subtext for danars v3 */
-"During the pairing process, your DanaRS v3 will show a pairing prompt while you iPhone will show a prompt for two pairing codes. On your pump, select OK and type the two codes on your iPhone. After that, iAPS is ready to communicate with your DanaRS v3" = "Během procesu párování váš DanaRS v3 zobrazí výzvu k párování, zatímco váš iPhone zobrazí výzvu k zadání dvou párovacích kódů. Na pumpě vyberte OK a zadejte dva kódy na svém iPhone. Poté je iAPS připraven komunikovat s vaším DanaRS v3"
+"During the pairing process, your DanaRS v3 will show a pairing prompt while you iPhone will show a prompt for two pairing codes. On your pump, select OK and type the two codes on your iPhone. After that, Loop is ready to communicate with your DanaRS v3" = "Během procesu párování váš DanaRS v3 zobrazí výzvu k párování, zatímco váš iPhone zobrazí výzvu k zadání dvou párovacích kódů. Na pumpě vyberte OK a zadejte dva kódy na svém iPhone. Poté je Loop připraven komunikovat s vaším DanaRS v3"
 
 /* Title for dana-i explaination */
 "Setting up Dana-i" = "Nastavení Dana-i"
 
 /* General subtext for dana */
-"After setting up the insulin type and bolus speed, you will see a screen with all found Dana pumps. Select the pump you want to link with iAPS." = "Po nastavení typu inzulínu a rychlosti bolusu se zobrazí obrazovka se všemi nalezenými pumpami Dana. Vyberte čerpadlo, které chcete propojit se smyčkou."
+"After setting up the insulin type and bolus speed, you will see a screen with all found Dana pumps. Select the pump you want to link with Loop." = "Po nastavení typu inzulínu a rychlosti bolusu se zobrazí obrazovka se všemi nalezenými pumpami Dana. Vyberte čerpadlo, které chcete propojit se smyčkou."
 
 /* Subtext for dana-i */
-"During the pairing process, your Dana-i will show a pairing prompt while you iPhone will show a prompt for a pairing code. On you pump, select OK and type the 6-digit code in screen on your iPhone. After that, iAPS is ready to communicate with your Dana-i" = "Během procesu párování váš Dana-i zobrazí výzvu k párování, zatímco váš iPhone zobrazí výzvu k zadání párovacího kódu. Na pumpě vyberte OK a zadejte 6místný kód na obrazovce vašeho iPhone. Poté je iAPS připraven komunikovat s vaším Dana-i"
+"During the pairing process, your Dana-i will show a pairing prompt while you iPhone will show a prompt for a pairing code. On you pump, select OK and type the 6-digit code in screen on your iPhone. After that, Loop is ready to communicate with your Dana-i" = "Během procesu párování váš Dana-i zobrazí výzvu k párování, zatímco váš iPhone zobrazí výzvu k zadání párovacího kódu. Na pumpě vyberte OK a zadejte 6místný kód na obrazovce vašeho iPhone. Poté je Loop připraven komunikovat s vaším Dana-i"
 
 /* Dana-i/RS invalid ble5 keys */
 "ERROR: Failed to pair device" = "CHYBA: Párování zařízení se nezdařilo"
@@ -388,7 +388,7 @@
 "Yes, Enable silent tones" = "Ano, Povolit tiché tóny"
 
 /* Description for basal profile number */
-"Set the basal profile the pump should use. Note, that it will overwrite the profile that is in the pump, with the one in iAPS" = "Nastavte bazální profil, který má pumpa používat. Všimněte si, že přepíše profil, který je v pumpě, profilem v iAPS"
+"Set the basal profile the pump should use. Note, that it will overwrite the profile that is in the pump, with the one in Loop" = "Nastavte bazální profil, který má pumpa používat. Všimněte si, že přepíše profil, který je v pumpě, profilem v Loop"
 
 
 /* Error message for reservoir view when reservoir empty

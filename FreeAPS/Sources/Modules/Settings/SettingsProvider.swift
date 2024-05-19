@@ -1,5 +1,3 @@
 extension Settings {
-    final class Provider: BaseProvider, SettingsProvider {
-        @Injected() var tidePoolManager: TidePoolManager!
-    }
+    final class Provider: BaseProvider, SettingsProvider {}
 }

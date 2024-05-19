@@ -145,16 +145,23 @@ extension Home {
                 units: $state.units,
                 alarm: $state.alarm,
                 lowGlucose: $state.lowGlucose,
-                highGlucose: $state.highGlucose,
-                cgmAvailable: $state.cgmAvailable
+                highGlucose: $state.highGlucose
             )
             .onTapGesture {
-                state.openCGM()
+                if state.alarm == nil {
+                    state.openCGM()
+                } else {
+                    state.showModal(for: .snooze)
+                }
             }
             .onLongPressGesture {
                 let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
                 impactHeavy.impactOccurred()
-                state.showModal(for: .snooze)
+                if state.alarm == nil {
+                    state.showModal(for: .snooze)
+                } else {
+                    state.openCGM()
+                }
             }
         }
 

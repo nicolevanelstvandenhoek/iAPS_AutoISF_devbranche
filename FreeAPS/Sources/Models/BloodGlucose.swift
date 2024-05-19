@@ -1,6 +1,4 @@
 import Foundation
-import HealthKit
-import LoopKit
 
 struct BloodGlucose: JSON, Identifiable, Hashable {
     enum Direction: String, JSON {
@@ -89,16 +87,5 @@ extension BloodGlucose: SavitzkyGolaySmoothable {
             glucose = Int(newValue)
             sgv = Int(newValue)
         }
-    }
-}
-
-extension BloodGlucose {
-    func convertStoredGlucoseSample(device: HKDevice?) -> StoredGlucoseSample {
-        StoredGlucoseSample(
-            syncIdentifier: id,
-            startDate: dateString.date,
-            quantity: HKQuantity(unit: .milligramsPerDeciliter, doubleValue: Double(glucose!)),
-            device: device
-        )
     }
 }

@@ -11,7 +11,6 @@ protocol FetchGlucoseManager: SourceInfoProvider {
     func refreshCGM()
     func updateGlucoseSource(cgmGlucoseSourceType: CGMType, cgmGlucosePluginId: String, newManager: CGMManagerUI?)
     func deleteGlucoseSource()
-    func removeCalibrations()
     var glucoseSource: GlucoseSource! { get }
     var cgmManager: CGMManagerUI? { get }
     var cgmGlucoseSourceType: CGMType? { get set }
@@ -30,13 +29,11 @@ final class BaseFetchGlucoseManager: FetchGlucoseManager, Injectable {
     private let processQueue = DispatchQueue(label: "BaseGlucoseManager.processQueue")
     @Injected() var glucoseStorage: GlucoseStorage!
     @Injected() var nightscoutManager: NightscoutManager!
-    @Injected() var tidePoolService: TidePoolManager!
     @Injected() var apsManager: APSManager!
     @Injected() var settingsManager: SettingsManager!
     @Injected() var healthKitManager: HealthKitManager!
     @Injected() var deviceDataManager: DeviceDataManager!
     @Injected() var pluginCGMManager: PluginManager!
-    @Injected() var calibrationService: CalibrationService!
 
     private var lifetime = Lifetime()
     private let timer = DispatchTimer(timeInterval: 1.minutes.timeInterval)
@@ -70,10 +67,6 @@ final class BaseFetchGlucoseManager: FetchGlucoseManager, Injectable {
 
     var glucoseSource: GlucoseSource!
 
-    func removeCalibrations() {
-        calibrationService.removeAllCalibrations()
-    }
-
     func deleteGlucoseSource() {
         cgmManager = nil
         updateGlucoseSource(
@@ -83,11 +76,6 @@ final class BaseFetchGlucoseManager: FetchGlucoseManager, Injectable {
     }
 
     func updateGlucoseSource(cgmGlucoseSourceType: CGMType, cgmGlucosePluginId: String, newManager: CGMManagerUI?) {
-        // if changed, remove all calibrations
-        if self.cgmGlucoseSourceType != cgmGlucoseSourceType || self.cgmGlucosePluginId != cgmGlucosePluginId {
-            removeCalibrations()
-        }
-
         self.cgmGlucoseSourceType = cgmGlucoseSourceType
         self.cgmGlucosePluginId = cgmGlucosePluginId
 
@@ -99,10 +87,12 @@ final class BaseFetchGlucoseManager: FetchGlucoseManager, Injectable {
         if let manager = newManager
         {
             cgmManager = manager
-            removeCalibrations()
         } else if self.cgmGlucoseSourceType == .plugin, cgmManager == nil, let rawCGMManager = rawCGMManager {
             cgmManager = cgmManagerFromRawValue(rawCGMManager)
         }
+//        } else if self.cgmGlucoseSourceType == .plugin, self.cgmGlucosePluginId != , self.cgmGlucosePluginId != cgmManager?.pluginIdentifier  {
+//            cgmManager = nil
+//        }
 
         switch self.cgmGlucoseSourceType {
         case nil,
@@ -163,10 +153,7 @@ final class BaseFetchGlucoseManager: FetchGlucoseManager, Injectable {
     }
 
     private func glucoseStoreAndHeartDecision(syncDate: Date, glucose: [BloodGlucose], glucoseFromHealth: [BloodGlucose] = []) {
-        // calibration add if required only for sensor
-        let newGlucose = overcalibrate(entries: glucose)
-
-        let allGlucose = newGlucose + glucoseFromHealth
+        let allGlucose = glucose + glucoseFromHealth
         var filteredByDate: [BloodGlucose] = []
         var filtered: [BloodGlucose] = []
 
@@ -219,7 +206,6 @@ final class BaseFetchGlucoseManager: FetchGlucoseManager, Injectable {
         deviceDataManager.heartbeat(date: Date())
 
         nightscoutManager.uploadGlucose()
-        tidePoolService.uploadGlucose(device: cgmManager?.cgmManagerStatus.device)
 
         // end of the BG tasks
         if let backgroundTask = backGroundFetchBGTaskID {
@@ -271,23 +257,6 @@ final class BaseFetchGlucoseManager: FetchGlucoseManager, Injectable {
 
     func sourceInfo() -> [String: Any]? {
         glucoseSource.sourceInfo()
-    }
-
-    private func overcalibrate(entries: [BloodGlucose]) -> [BloodGlucose] {
-        // overcalibrate
-        var overcalibration: ((Int) -> (Double))?
-        processQueue.sync { overcalibration = calibrationService.calibrate }
-
-        if let overcalibration = overcalibration {
-            return entries.map { entry in
-                var entry = entry
-                entry.glucose = Int(overcalibration(entry.glucose!))
-                entry.sgv = Int(overcalibration(entry.sgv!))
-                return entry
-            }
-        } else {
-            return entries
-        }
     }
 }
 

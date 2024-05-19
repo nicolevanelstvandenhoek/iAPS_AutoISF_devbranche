@@ -6,10 +6,8 @@ import Swinject
 protocol PluginManager {
     var availablePumpManagers: [PumpManagerDescriptor] { get }
     var availableCGMManagers: [CGMManagerDescriptor] { get }
-    var availableServices: [ServiceDescriptor] { get }
     func getPumpManagerTypeByIdentifier(_ identifier: String) -> PumpManagerUI.Type?
     func getCGMManagerTypeByIdentifier(_ identifier: String) -> CGMManagerUI.Type?
-    func getServiceTypeByIdentifier(_ identifier: String) -> ServiceUI.Type?
 }
 
 class BasePluginManager: Injectable, PluginManager {

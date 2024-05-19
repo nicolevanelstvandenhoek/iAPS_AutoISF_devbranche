@@ -1,4 +1,3 @@
-import DanaKit
 import LoopKit
 import LoopKitUI
 import MinimedKit
@@ -51,14 +50,6 @@ extension PumpConfig {
                 )
             case .omnipodBLE:
                 setupViewController = OmniBLEPumpManager.setupViewController(
-                    initialSettings: initialSettings,
-                    bluetoothProvider: bluetoothManager,
-                    colorPalette: .default,
-                    allowDebugFeatures: false,
-                    allowedInsulinTypes: [.apidra, .humalog, .novolog, .fiasp, .lyumjev]
-                )
-            case .dana:
-                setupViewController = DanaKitPumpManager.setupViewController(
                     initialSettings: initialSettings,
                     bluetoothProvider: bluetoothManager,
                     colorPalette: .default,

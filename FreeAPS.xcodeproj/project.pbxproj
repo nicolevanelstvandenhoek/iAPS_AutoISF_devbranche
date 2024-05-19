@@ -325,6 +325,10 @@
 		CC41E29A2B1E1F460070974F /* HistoryLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41E2992B1E1F460070974F /* HistoryLayout.swift */; };
 		CC6C406E2ACDD69E009B8058 /* RawFetchedProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6C406D2ACDD69E009B8058 /* RawFetchedProfile.swift */; };
 		CD78BB94E43B249D60CC1A1B /* NotificationsConfigRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22963BD06A9C83959D4914E4 /* NotificationsConfigRootView.swift */; };
+		CE1F6DD92BADF4620064EB8D /* PluginManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F6DD82BADF4620064EB8D /* PluginManagerTests.swift */; };
+		CE1F6DDB2BAE08B60064EB8D /* TidepoolManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F6DDA2BAE08B60064EB8D /* TidepoolManager.swift */; };
+		CE1F6DE72BAF1A180064EB8D /* BuildDetails.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE1F6DE62BAF1A180064EB8D /* BuildDetails.plist */; };
+		CE1F6DE92BAF37C90064EB8D /* TidePoolConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F6DE82BAF37C90064EB8D /* TidePoolConfigView.swift */; };
 		CE1F2B9A2B011CC0002EDCA0 /* AutoISFConfDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F2B992B011CC0002EDCA0 /* AutoISFConfDataFlow.swift */; };
 		CE1F2B9C2B011CCF002EDCA0 /* AutoISFConfProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F2B9B2B011CCF002EDCA0 /* AutoISFConfProvider.swift */; };
 		CE1F2B9E2B011CDE002EDCA0 /* AutoISFConfStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F2B9D2B011CDE002EDCA0 /* AutoISFConfStateModel.swift */; };
@@ -376,6 +380,13 @@
 		CEB434E728B9053300B70274 /* LoopUIColorPalette+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB434E628B9053300B70274 /* LoopUIColorPalette+Default.swift */; };
 		CEB434FD28B90B7C00B70274 /* SwiftCharts in Frameworks */ = {isa = PBXBuildFile; productRef = CEB434FC28B90B7C00B70274 /* SwiftCharts */; };
 		CEB434FE28B90B8C00B70274 /* SwiftCharts in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CEB434FC28B90B7C00B70274 /* SwiftCharts */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		CEE9A6552BBB418300EB5194 /* CalibrationsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9A64F2BBB418300EB5194 /* CalibrationsProvider.swift */; };
+		CEE9A6562BBB418300EB5194 /* CalibrationsRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9A6512BBB418300EB5194 /* CalibrationsRootView.swift */; };
+		CEE9A6572BBB418300EB5194 /* CalibrationsChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9A6522BBB418300EB5194 /* CalibrationsChart.swift */; };
+		CEE9A6582BBB418300EB5194 /* CalibrationsStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9A6532BBB418300EB5194 /* CalibrationsStateModel.swift */; };
+		CEE9A6592BBB418300EB5194 /* CalibrationsDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9A6542BBB418300EB5194 /* CalibrationsDataFlow.swift */; };
+		CEE9A65C2BBB41C800EB5194 /* CalibrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9A65B2BBB41C800EB5194 /* CalibrationService.swift */; };
+		CEE9A65E2BBC9F6500EB5194 /* CalibrationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9A65D2BBC9F6500EB5194 /* CalibrationsTests.swift */; };
 		CECCB4262BDBDCF7006E41C4 /* carbPresetResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCB4252BDBDCF7006E41C4 /* carbPresetResult.swift */; };
 		CECCB4222BDB85BC006E41C4 /* ListCarbsPresetIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCB4212BDB85BC006E41C4 /* ListCarbsPresetIntent.swift */; };
 		D2165E9D78EFF692C1DED1C6 /* AddTempTargetDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A42073A2D03A278914448 /* AddTempTargetDataFlow.swift */; };
@@ -900,6 +911,10 @@
 		CE1F2B9B2B011CCF002EDCA0 /* AutoISFConfProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoISFConfProvider.swift; sourceTree = "<group>"; };
 		CE1F2B9D2B011CDE002EDCA0 /* AutoISFConfStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoISFConfStateModel.swift; sourceTree = "<group>"; };
 		CE1F2BA02B011CF5002EDCA0 /* AutoISFConfRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoISFConfRootView.swift; sourceTree = "<group>"; };
+		CE1F6DD82BADF4620064EB8D /* PluginManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginManagerTests.swift; sourceTree = "<group>"; };
+		CE1F6DDA2BAE08B60064EB8D /* TidepoolManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidepoolManager.swift; sourceTree = "<group>"; };
+		CE1F6DE62BAF1A180064EB8D /* BuildDetails.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BuildDetails.plist; sourceTree = "<group>"; };
+		CE1F6DE82BAF37C90064EB8D /* TidePoolConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidePoolConfigView.swift; sourceTree = "<group>"; };
 		CE2FAD39297D93F0001A872C /* BloodGlucoseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodGlucoseExtensions.swift; sourceTree = "<group>"; };
 		CE398D012977349800DF218F /* CryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoKit.framework; path = System/Library/Frameworks/CryptoKit.framework; sourceTree = SDKROOT; };
 		CE398D17297C9EE800DF218F /* G7SensorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = G7SensorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -952,6 +967,13 @@
 		CEC751D729D88262006E9D24 /* MinimedKitUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MinimedKitUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECCB4252BDBDCF7006E41C4 /* carbPresetResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carbPresetResult.swift; sourceTree = "<group>"; };
 		CECCB4212BDB85BC006E41C4 /* ListCarbsPresetIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCarbsPresetIntent.swift; sourceTree = "<group>"; };
+		CEE9A64F2BBB418300EB5194 /* CalibrationsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationsProvider.swift; sourceTree = "<group>"; };
+		CEE9A6512BBB418300EB5194 /* CalibrationsRootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationsRootView.swift; sourceTree = "<group>"; };
+		CEE9A6522BBB418300EB5194 /* CalibrationsChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationsChart.swift; sourceTree = "<group>"; };
+		CEE9A6532BBB418300EB5194 /* CalibrationsStateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationsStateModel.swift; sourceTree = "<group>"; };
+		CEE9A6542BBB418300EB5194 /* CalibrationsDataFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationsDataFlow.swift; sourceTree = "<group>"; };
+		CEE9A65B2BBB41C800EB5194 /* CalibrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationService.swift; sourceTree = "<group>"; };
+		CEE9A65D2BBC9F6500EB5194 /* CalibrationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationsTests.swift; sourceTree = "<group>"; };
 		CFCFE0781F9074C2917890E8 /* ManualTempBasalStateModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ManualTempBasalStateModel.swift; sourceTree = "<group>"; };
 		D0BDC6993C1087310EDFC428 /* CREditorRootView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CREditorRootView.swift; sourceTree = "<group>"; };
 		D295A3F870E826BE371C0BB5 /* AutotuneConfigStateModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AutotuneConfigStateModel.swift; sourceTree = "<group>"; };
@@ -1275,6 +1297,7 @@
 				F2159A472BA60A0300A0B716 /* ContactTrick */,
 				195D80B22AF696EE00D25097 /* Dynamic */,
 				BD7DA9A32AE06DBA00601B20 /* BolusCalculatorConfig */,
+				CEE9A64D2BBB411C00EB5194 /* Calibrations */,
 				190EBCC229FF134900BA767D /* StatConfig */,
 				19F95FF129F10F9C00314DDC /* Stat */,
 				CE94597C29E9E1CD0047C9C6 /* WatchConfig */,
@@ -1403,6 +1426,7 @@
 			isa = PBXGroup;
 			children = (
 				3811DE3C25C9D4A100A708ED /* SettingsRootView.swift */,
+				CE1F6DE82BAF37C90064EB8D /* TidePoolConfigView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1444,6 +1468,7 @@
 				3811DE9725C9D88300A708ED /* NightscoutManager.swift */,
 				38FE826925CC82DB001FF17A /* NetworkService.swift */,
 				38FE826C25CC8461001FF17A /* NightscoutAPI.swift */,
+				CE1F6DDA2BAE08B60064EB8D /* TidepoolManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1609,6 +1634,7 @@
 		3856933F270B57A00002C50D /* CGM */ = {
 			isa = PBXGroup;
 			children = (
+				CEE9A65A2BBB41AD00EB5194 /* Calibrations */,
 				F816825F28DB441800054060 /* BluetoothTransmitter.swift */,
 				F816825D28DB441200054060 /* HeartBeatManager.swift */,
 				38569346270B5DFB0002C50D /* AppGroupSource.swift */,
@@ -1645,6 +1671,7 @@
 		388E594F25AD948C0019842D = {
 			isa = PBXGroup;
 			children = (
+				CE1F6DE62BAF1A180064EB8D /* BuildDetails.plist */,
 				FEFA5C0D299F810B00765C17 /* Core_Data.xcdatamodeld */,
 				38F3783A2613555C009DB701 /* Config.xcconfig */,
 				3818AA42274BBC1100843DB3 /* ConfigOverride.xcconfig */,
@@ -1962,6 +1989,8 @@
 			children = (
 				38FCF3F125E9028E0078B0D1 /* Info.plist */,
 				38FCF3F825E902C20078B0D1 /* FileStorageTests.swift */,
+				CE1F6DD82BADF4620064EB8D /* PluginManagerTests.swift */,
+				CEE9A65D2BBC9F6500EB5194 /* CalibrationsTests.swift */,
 			);
 			path = FreeAPSTests;
 			sourceTree = "<group>";
@@ -2383,6 +2412,34 @@
 			path = Bluetooth;
 			sourceTree = "<group>";
 		};
+		CEE9A64D2BBB411C00EB5194 /* Calibrations */ = {
+			isa = PBXGroup;
+			children = (
+				CEE9A6542BBB418300EB5194 /* CalibrationsDataFlow.swift */,
+				CEE9A64F2BBB418300EB5194 /* CalibrationsProvider.swift */,
+				CEE9A6532BBB418300EB5194 /* CalibrationsStateModel.swift */,
+				CEE9A6502BBB418300EB5194 /* View */,
+			);
+			path = Calibrations;
+			sourceTree = "<group>";
+		};
+		CEE9A6502BBB418300EB5194 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEE9A6512BBB418300EB5194 /* CalibrationsRootView.swift */,
+				CEE9A6522BBB418300EB5194 /* CalibrationsChart.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEE9A65A2BBB41AD00EB5194 /* Calibrations */ = {
+			isa = PBXGroup;
+			children = (
+				CEE9A65B2BBB41C800EB5194 /* CalibrationService.swift */,
+			);
+			path = Calibrations;
+			sourceTree = "<group>";
+		};
 		D533BF261CDC1C3F871E7BFD /* NightscoutConfig */ = {
 			isa = PBXGroup;
 			children = (
@@ -2722,6 +2779,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				198377D2266BFFF6004DE65E /* Localizable.strings in Resources */,
+				CE1F6DE72BAF1A180064EB8D /* BuildDetails.plist in Resources */,
 				38DF178D27733E6800B3528F /* snow.sks in Resources */,
 				388E597225AD9CF10019842D /* json in Resources */,
 				38DF178E27733E6800B3528F /* Assets.xcassets in Resources */,
@@ -2870,6 +2928,7 @@
 				383420D925FFEB3F002D46C1 /* Popup.swift in Sources */,
 				3811DE3025C9D49500A708ED /* HomeStateModel.swift in Sources */,
 				38BF021725E7CBBC00579895 /* PumpManagerExtensions.swift in Sources */,
+				CEE9A6552BBB418300EB5194 /* CalibrationsProvider.swift in Sources */,
 				19F95FF529F10FCF00314DDC /* StatProvider.swift in Sources */,
 				38F3B2EF25ED8E2A005C48AA /* TempTargetsStorage.swift in Sources */,
 				19B0EF2128F6D66200069496 /* Statistics.swift in Sources */,
@@ -2890,6 +2949,7 @@
 				382C133725F13A1E00715CE1 /* InsulinSensitivities.swift in Sources */,
 				19D466A529AA2BD4004D5F33 /* FPUConfigProvider.swift in Sources */,
 				383948D625CD4D8900E91849 /* FileStorage.swift in Sources */,
+				CEE9A6572BBB418300EB5194 /* CalibrationsChart.swift in Sources */,
 				3811DE4125C9D4A100A708ED /* SettingsRootView.swift in Sources */,
 				38192E04261B82FA0094D973 /* ReachabilityManager.swift in Sources */,
 				38E44539274E411700EC9A94 /* Disk+UIImage.swift in Sources */,
@@ -2898,8 +2958,10 @@
 				CECCB4262BDBDCF7006E41C4 /* carbPresetResult.swift in Sources */,
 				F2159A542BA6207F00A0B716 /* ContactTrickEntry.swift in Sources */,
 				38569348270B5DFB0002C50D /* GlucoseSource.swift in Sources */,
+				CEE9A6582BBB418300EB5194 /* CalibrationsStateModel.swift in Sources */,
 				CEB434E328B8F9DB00B70274 /* BluetoothStateManager.swift in Sources */,
 				3811DE4225C9D4A100A708ED /* SettingsDataFlow.swift in Sources */,
+				CEE9A6562BBB418300EB5194 /* CalibrationsRootView.swift in Sources */,
 				3811DE2525C9D48300A708ED /* MainRootView.swift in Sources */,
 				CE94598229E9E3D30047C9C6 /* WatchConfigProvider.swift in Sources */,
 				38E44535274E411700EC9A94 /* Disk+Data.swift in Sources */,
@@ -2938,6 +3000,7 @@
 				38569347270B5DFB0002C50D /* CGMType.swift in Sources */,
 				3821ED4C25DD18BA00BC42AD /* Constants.swift in Sources */,
 				384E803425C385E60086DB71 /* JavaScriptWorker.swift in Sources */,
+				CE1F6DE92BAF37C90064EB8D /* TidePoolConfigView.swift in Sources */,
 				3811DE5D25C9D4D500A708ED /* Publisher.swift in Sources */,
 				E00EEC0727368630002FF094 /* APSAssembly.swift in Sources */,
 				38B4F3AF25E2979F00E76A18 /* IndexedCollection.swift in Sources */,
@@ -2952,6 +3015,7 @@
 				CE95BF5A2BA62E4A00DC3DE3 /* PluginSource.swift in Sources */,
 				3811DE5C25C9D4D500A708ED /* Formatters.swift in Sources */,
 				3871F39F25ED895A0013ECB5 /* Decimal+Extensions.swift in Sources */,
+				CEE9A6592BBB418300EB5194 /* CalibrationsDataFlow.swift in Sources */,
 				3811DE3525C9D49500A708ED /* HomeRootView.swift in Sources */,
 				49CA5A182BDA385E001F0D3A /* KetoProtectConfRootView.swift in Sources */,
 				38E98A2925F52C9300C0CED0 /* Error+Extensions.swift in Sources */,
@@ -3022,6 +3086,7 @@
 				CE7CA3532A064973004BE681 /* tempPresetEntity.swift in Sources */,
 				D6DEC113821A7F1056C4AA1E /* NightscoutConfigDataFlow.swift in Sources */,
 				38E98A3025F52FF700C0CED0 /* Config.swift in Sources */,
+				CE1F6DDB2BAE08B60064EB8D /* TidepoolManager.swift in Sources */,
 				BD2B464E0745FBE7B79913F4 /* NightscoutConfigProvider.swift in Sources */,
 				9825E5E923F0B8FA80C8C7C7 /* NightscoutConfigStateModel.swift in Sources */,
 				CE1F2B9E2B011CDE002EDCA0 /* AutoISFConfStateModel.swift in Sources */,
@@ -3088,6 +3153,7 @@
 				69B9A368029F7EB39F525422 /* CREditorStateModel.swift in Sources */,
 				38E44538274E411700EC9A94 /* Disk+[Data].swift in Sources */,
 				98641AF4F92123DA668AB931 /* CREditorRootView.swift in Sources */,
+				CEE9A65C2BBB41C800EB5194 /* CalibrationService.swift in Sources */,
 				38E4453D274E411700EC9A94 /* Disk+Errors.swift in Sources */,
 				38E98A2325F52C9300C0CED0 /* Signpost.swift in Sources */,
 				495068AA2BDFEF1D0048FF3B /* CarbPresetIntentRequest.swift in Sources */,
@@ -3216,6 +3282,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE9A65E2BBC9F6500EB5194 /* CalibrationsTests.swift in Sources */,
+				CE1F6DD92BADF4620064EB8D /* PluginManagerTests.swift in Sources */,
 				38FCF3F925E902C20078B0D1 /* FileStorageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

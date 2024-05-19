@@ -103,7 +103,13 @@ extension PluginSource: CGMManagerDelegate {
         dispatchPrecondition(condition: .onQueue(processQueue))
         // TODO: Events in APS ?
         // currently only display in log the date of the event
-        events.forEach { debug(.deviceManager, "events from CGM at \($0.date)") }
+        events.forEach { event in
+            debug(.deviceManager, "events from CGM at \(event.date)")
+
+            if event.type == .sensorStart {
+                self.glucoseManager?.removeCalibrations()
+            }
+        }
     }
 
     func startDateToFilterNewData(for _: CGMManager) -> Date? {
@@ -126,6 +132,7 @@ extension PluginSource: CGMManagerDelegate {
     }
 
     func cgmManager(_: CGMManager, didUpdate status: CGMManagerStatus) {
+        debug(.deviceManager, "DEBUG DID UPDATE STATE")
         processQueue.async {
             if self.cgmHasValidSensorSession != status.hasValidSensorSession {
                 self.cgmHasValidSensorSession = status.hasValidSensorSession

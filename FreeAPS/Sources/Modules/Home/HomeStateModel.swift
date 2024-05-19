@@ -10,6 +10,7 @@ extension Home {
         @Injected() var apsManager: APSManager!
         @Injected() var nightscoutManager: NightscoutManager!
         @Injected() var storage: TempTargetsStorage!
+        @Injected() var fetchGlucoseManager: FetchGlucoseManager!
         private let timer = DispatchTimer(timeInterval: 5)
         private(set) var filteredHours = 24
         @Published var glucose: [BloodGlucose] = []
@@ -75,6 +76,7 @@ extension Home {
         @Published var alwaysUseColors: Bool = true
         @Published var timeSettings: Bool = true
         @Published var calculatedTins: String = ""
+        @Published var cgmAvailable: Bool = false
 
         private var numberFormatter: NumberFormatter {
             let formatter = NumberFormatter()
@@ -299,6 +301,7 @@ extension Home {
                     self.glucoseDelta = nil
                 }
                 self.alarm = self.provider.glucoseStorage.alarm
+                cgmAvailable = (fetchGlucoseManager.cgmGlucoseSourceType != CGMType.none)
             }
         }
 
@@ -516,18 +519,7 @@ extension Home {
         }
 
         func openCGM() {
-            guard var url = nightscoutManager.cgmURL else { return }
-
-            switch url.absoluteString {
-            case "http://127.0.0.1:1979":
-                url = URL(string: "spikeapp://")!
-            case "http://127.0.0.1:17580":
-                url = URL(string: "diabox://")!
-//            case CGMType.libreTransmitter.appURL?.absoluteString:
-//                showModal(for: .libreConfig)
-            default: break
-            }
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            showModal(for: .cgmDirect)
         }
 
         func infoPanelTTPercentage(_ hbt_: Double, _ target: Decimal) -> Decimal {

@@ -8,6 +8,7 @@ struct CurrentGlucoseView: View {
     @Binding var alarm: GlucoseAlarm?
     @Binding var lowGlucose: Decimal
     @Binding var highGlucose: Decimal
+    @Binding var cgmAvailable: Bool
 
     @State private var rotationDegrees: Double = 0.0
     @State private var angularGradient = AngularGradient(colors: [
@@ -62,12 +63,7 @@ struct CurrentGlucoseView: View {
     }
 
     var body: some View {
-        let triangleColor = Color(red: 0.262745098, green: 0.7333333333, blue: 0.9137254902)
-
-        ZStack {
-            TrendShape(gradient: angularGradient, color: triangleColor)
-                .rotationEffect(.degrees(rotationDegrees))
-
+        if cgmAvailable {
             VStack(alignment: .center) {
                 HStack {
                     Text(
@@ -77,8 +73,10 @@ struct CurrentGlucoseView: View {
                                     .string(from: Double(units == .mmolL ? $0.asMmolL : Decimal($0)) as NSNumber)! }
                             ?? "--"
                     )
-                    .font(.system(size: 40, weight: .bold))
-                    .foregroundColor(alarm == nil ? colourGlucoseText : .loopRed)
+                    .font(.title).fontWeight(.bold)
+                    .foregroundColor(alarm == nil ? colorOfGlucose : .loopRed)
+
+                    image
                 }
                 HStack {
                     let minutesAgo = -1 * (recentGlucose?.dateString.timeIntervalSinceNow ?? 0) / 60
@@ -89,7 +87,7 @@ struct CurrentGlucoseView: View {
                                 NSLocalizedString("min", comment: "Short form for minutes") + " "
                         )
                     )
-                    .font(.caption2).foregroundColor(colorScheme == .dark ? Color.white.opacity(0.9) : Color.secondary)
+                    .font(.caption2).foregroundColor(.secondary)
 
                     Text(
                         delta
@@ -97,9 +95,20 @@ struct CurrentGlucoseView: View {
                                 deltaFormatter.string(from: Double(units == .mmolL ? $0.asMmolL : Decimal($0)) as NSNumber)!
                             } ?? "--"
                     )
-                    .font(.caption2).foregroundColor(colorScheme == .dark ? Color.white.opacity(0.9) : Color.secondary)
+                    .font(.caption2).foregroundColor(.secondary)
                 }.frame(alignment: .top)
             }
+        } else {
+            VStack(alignment: .center, spacing: 12) {
+                HStack
+                    {
+                        // no cgm defined so display a generic CGM
+                        Image(systemName: "sensor.tag.radiowaves.forward.fill").font(.body).imageScale(.large)
+                    }
+                HStack {
+                    Text("Add CGM").font(.caption).bold()
+                }
+            }.frame(alignment: .top)
         }
         .onChange(of: recentGlucose?.direction) { newDirection in
             withAnimation {

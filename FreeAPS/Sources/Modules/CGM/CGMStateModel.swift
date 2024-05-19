@@ -48,6 +48,16 @@ extension CGM {
                     cgmName(id: $0.identifier, type: CGMType.plugin, displayName: $0.localizedTitle, subtitle: $0.localizedTitle)
                 }
 
+            listOfCGM.sort {
+                if $0.type == .none {
+                    return true
+                } else if $1.type == .none {
+                    return false
+                } else {
+                    return $0.displayName < $1.displayName
+                }
+            }
+
             switch settingsManager.settings.cgm {
             case .plugin:
                 if let cgmPluginInfo = listOfCGM.first(where: { $0.id == settingsManager.settings.cgmPluginIdentifier }) {

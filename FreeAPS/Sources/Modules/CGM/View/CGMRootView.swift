@@ -45,11 +45,49 @@ extension CGM {
                             UIApplication.shared.open(link, options: [:], completionHandler: nil)
                         }
                     }
-                }
-                if state.cgmCurrent.type == .plugin {
-                    Section {
-                        Button("CGM Configuration") {
-                            setupCGM.toggle()
+
+                    if let cgmFetchManager = state.cgmManager {
+                        if let appURL = state.urlOfApp()
+                        {
+                            Section {
+                                Button {
+                                    UIApplication.shared.open(appURL, options: [:]) { success in
+                                        if !success {
+                                            self.router.alertMessage
+                                                .send(MessageContent(content: "Unable to open the app", type: .warning))
+                                        }
+                                    }
+                                }
+
+                                label: {
+                                    Label(state.displayNameOfApp(), systemImage: "waveform.path.ecg.rectangle").font(.title3) }
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                                    .buttonStyle(.bordered)
+                            }
+                            .listRowBackground(Color.clear)
+                        } else if state.cgmCurrent.type == .nightscout && state.url != nil {
+                            Section {
+                                Button {
+                                    UIApplication.shared.open(state.url!, options: [:]) { success in
+                                        if !success {
+                                            self.router.alertMessage
+                                                .send(MessageContent(content: "No URL available", type: .warning))
+                                        }
+                                    }
+                                }
+                                label: { Label("Open URL", systemImage: "waveform.path.ecg.rectangle").font(.title3) }
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                                    .buttonStyle(.bordered)
+                            }
+                            .listRowBackground(Color.clear)
+                        }
+                    }
+
+                    if state.cgmCurrent.type == .plugin {
+                        Section {
+                            Button("CGM Configuration") {
+                                setupCGM.toggle()
+                            }
                         }
                     }
                 }
@@ -71,17 +109,7 @@ extension CGM {
                     }
                 }
 
-                if state.cgmCurrent.type == .nightscout {
-                    Section(header: Text("Nightscout")) {
-                        if state.url != nil {
-                            Button(state.url!.absoluteString) {
-                                UIApplication.shared.open(state.url!, options: [:], completionHandler: nil)
-                            }
-                        } else {
-                            Text("You need to configure Nightscout URL")
-                        }
-                    }
-                }
+                    // }
 
                 Section(header: Text("Calendar")) {
                     Toggle("Create Events in Calendar", isOn: $state.createCalendarEvents)

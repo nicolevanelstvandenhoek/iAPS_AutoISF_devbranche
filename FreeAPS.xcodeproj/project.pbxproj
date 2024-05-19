@@ -329,6 +329,8 @@
 		CE1F2B9C2B011CCF002EDCA0 /* AutoISFConfProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F2B9B2B011CCF002EDCA0 /* AutoISFConfProvider.swift */; };
 		CE1F2B9E2B011CDE002EDCA0 /* AutoISFConfStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F2B9D2B011CDE002EDCA0 /* AutoISFConfStateModel.swift */; };
 		CE1F2BA12B011CF5002EDCA0 /* AutoISFConfRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F2BA02B011CF5002EDCA0 /* AutoISFConfRootView.swift */; };
+		CE1F6DD92BADF4620064EB8D /* PluginManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F6DD82BADF4620064EB8D /* PluginManagerTests.swift */; };
+		CE1F6DDB2BAE08B60064EB8D /* TidepoolManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F6DDA2BAE08B60064EB8D /* TidepoolManager.swift */; };
 		CE2FAD3A297D93F0001A872C /* BloodGlucoseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FAD39297D93F0001A872C /* BloodGlucoseExtensions.swift */; };
 		CE48C86428CA69D5007C0598 /* OmniBLEPumpManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48C86328CA69D5007C0598 /* OmniBLEPumpManagerExtensions.swift */; };
 		CE48C86628CA6B48007C0598 /* OmniPodManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48C86528CA6B48007C0598 /* OmniPodManagerExtensions.swift */; };
@@ -896,6 +898,8 @@
 		C8D1A7CA8C10C4403D4BBFA7 /* BolusDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BolusDataFlow.swift; sourceTree = "<group>"; };
 		CC41E2992B1E1F460070974F /* HistoryLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryLayout.swift; sourceTree = "<group>"; };
 		CC6C406D2ACDD69E009B8058 /* RawFetchedProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawFetchedProfile.swift; sourceTree = "<group>"; };
+		CE1F6DD82BADF4620064EB8D /* PluginManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginManagerTests.swift; sourceTree = "<group>"; };
+		CE1F6DDA2BAE08B60064EB8D /* TidepoolManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidepoolManager.swift; sourceTree = "<group>"; };
 		CE1F2B992B011CC0002EDCA0 /* AutoISFConfDataFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoISFConfDataFlow.swift; sourceTree = "<group>"; };
 		CE1F2B9B2B011CCF002EDCA0 /* AutoISFConfProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoISFConfProvider.swift; sourceTree = "<group>"; };
 		CE1F2B9D2B011CDE002EDCA0 /* AutoISFConfStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoISFConfStateModel.swift; sourceTree = "<group>"; };
@@ -1444,6 +1448,7 @@
 				3811DE9725C9D88300A708ED /* NightscoutManager.swift */,
 				38FE826925CC82DB001FF17A /* NetworkService.swift */,
 				38FE826C25CC8461001FF17A /* NightscoutAPI.swift */,
+				CE1F6DDA2BAE08B60064EB8D /* TidepoolManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1962,6 +1967,7 @@
 			children = (
 				38FCF3F125E9028E0078B0D1 /* Info.plist */,
 				38FCF3F825E902C20078B0D1 /* FileStorageTests.swift */,
+				CE1F6DD82BADF4620064EB8D /* PluginManagerTests.swift */,
 			);
 			path = FreeAPSTests;
 			sourceTree = "<group>";
@@ -3022,6 +3028,7 @@
 				CE7CA3532A064973004BE681 /* tempPresetEntity.swift in Sources */,
 				D6DEC113821A7F1056C4AA1E /* NightscoutConfigDataFlow.swift in Sources */,
 				38E98A3025F52FF700C0CED0 /* Config.swift in Sources */,
+				CE1F6DDB2BAE08B60064EB8D /* TidepoolManager.swift in Sources */,
 				BD2B464E0745FBE7B79913F4 /* NightscoutConfigProvider.swift in Sources */,
 				9825E5E923F0B8FA80C8C7C7 /* NightscoutConfigStateModel.swift in Sources */,
 				CE1F2B9E2B011CDE002EDCA0 /* AutoISFConfStateModel.swift in Sources */,
@@ -3216,6 +3223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1F6DD92BADF4620064EB8D /* PluginManagerTests.swift in Sources */,
 				38FCF3F925E902C20078B0D1 /* FileStorageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

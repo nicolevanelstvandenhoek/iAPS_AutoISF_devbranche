@@ -341,7 +341,7 @@
 		CE6B025728F350FF000C5502 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6B025628F350FF000C5502 /* HealthKit.framework */; };
 		CE7950242997D81700FA576E /* CGMSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7950232997D81700FA576E /* CGMSettingsView.swift */; };
 		CE7950262998056D00FA576E /* CGMSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7950252998056D00FA576E /* CGMSetupView.swift */; };
-        
+
 		CE7CA3502A064973004BE681 /* CancelTempPresetIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CA3462A064973004BE681 /* CancelTempPresetIntent.swift */; };
 		CE7CA3512A064973004BE681 /* ApplyTempPresetIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CA3472A064973004BE681 /* ApplyTempPresetIntent.swift */; };
 		CE7CA3522A064973004BE681 /* ListTempPresetsIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CA3482A064973004BE681 /* ListTempPresetsIntent.swift */; };
@@ -665,7 +665,6 @@
 		3811DF0125CA9FEA00A708ED /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		3811DF0F25CAAAE200A708ED /* APSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APSManager.swift; sourceTree = "<group>"; };
 		3818AA42274BBC1100843DB3 /* ConfigOverride.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigOverride.xcconfig; sourceTree = "<group>"; };
-		3818AA45274C229000843DB3 /* LibreTransmitter */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LibreTransmitter; path = Dependencies/LibreTransmitter; sourceTree = "<group>"; };
 		3818AA49274C267000843DB3 /* CGMBLEKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CGMBLEKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3818AA4C274C26A300843DB3 /* LoopKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoopKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3818AA4D274C26A300843DB3 /* LoopKitUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LoopKitUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };

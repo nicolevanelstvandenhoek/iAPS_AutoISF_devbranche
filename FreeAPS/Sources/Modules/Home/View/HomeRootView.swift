@@ -23,11 +23,11 @@ extension Home {
         }
 
         @State var timeButtons: [Buttons] = [
-            Buttons(label: "3h", number: "3", active: false, hours: 3),
+            Buttons(label: "2h", number: "2", active: false, hours: 2),
+            Buttons(label: "4h", number: "4", active: false, hours: 4),
             Buttons(label: "6h", number: "6", active: false, hours: 6),
             Buttons(label: "12h", number: "12", active: false, hours: 12),
-            Buttons(label: "24h", number: "24", active: false, hours: 24),
-            Buttons(label: "36h", number: "36", active: false, hours: 36)
+            Buttons(label: "24h", number: "24", active: false, hours: 24)
         ]
 
         let buttonFont = Font.custom("TimeButtonFont", size: 14)
@@ -148,12 +148,20 @@ extension Home {
                 highGlucose: $state.highGlucose
             )
             .onTapGesture {
-                state.openCGM()
+                if state.alarm == nil {
+                    state.openCGM()
+                } else {
+                    state.showModal(for: .snooze)
+                }
             }
             .onLongPressGesture {
                 let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
                 impactHeavy.impactOccurred()
-                state.showModal(for: .snooze)
+                if state.alarm == nil {
+                    state.showModal(for: .snooze)
+                } else {
+                    state.openCGM()
+                }
             }
         }
 
@@ -307,22 +315,12 @@ extension Home {
                         .padding(.leading, 8)
                 }
                 if state.tins {
-                    HStack {
-                        Text(
-                            "TINS: \(state.calculatedTins)" +
-                                NSLocalizedString(" U", comment: "Unit in number of units delivered (keep the space character!)")
-                        )
-                        .font(.system(size: 12, weight: .bold))
-                        .foregroundColor(.insulin)
-                        .onChange(of: state.hours) { _ in
-                            state.calculatedTins = state.calculateTINS()
-                        }
-                        .onAppear {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                state.calculatedTins = state.calculateTINS()
-                            }
-                        }
-                    }
+                    Text(
+                        "TINS: \(state.calculateTINS())" +
+                            NSLocalizedString(" U", comment: "Unit in number of units delivered (keep the space character!)")
+                    )
+                    .font(.system(size: 12, weight: .bold))
+                    .foregroundColor(.insulin)
                 }
 
                 if let tempTargetString = tempTargetString {
@@ -382,9 +380,9 @@ extension Home {
                 Group {
                     Text("TDD").foregroundColor(.insulin)
                     Text(numberFormatter.string(from: (state.suggestion?.tdd ?? 0) as NSNumber) ?? "0").foregroundColor(.primary)
-                }.font(.system(size: 12, weight: .bold))
+                }.font(.system(size: 12, weight: .black))
                 Group {
-                    Text("ytd.").foregroundColor(.insulin).padding(.leading, 4)
+                    Text("YTD").foregroundColor(.insulin).padding(.leading, 4)
                     Text(numberFormatter.string(from: (state.suggestion?.tddytd ?? 0) as NSNumber) ?? "0")
                         .foregroundColor(.primary)
 //                    Text("Ø7d").foregroundColor(.insulin).padding(.leading, 4)
@@ -525,18 +523,18 @@ extension Home {
                     Button { state.showModal(for: .addCarbs(editMode: false, override: false)) }
                     label: {
                         ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
-                            Image("carbs1")
+                            Image(systemName: "fork.knife.circle.fill")
                                 .renderingMode(.template)
                                 .resizable()
-                                .frame(width: 30, height: 30)
-//                                .foregroundColor(.loopYellow)
+                                .frame(width: 25, height: 25)
+                                .foregroundColor(.loopYellow)
                                 .padding(8)
                             if let carbsReq = state.carbsRequired {
                                 Text(numberFormatter.string(from: carbsReq as NSNumber)!)
                                     .font(.caption)
                                     .foregroundColor(.white)
                                     .padding(4)
-                                    .background(Capsule().fill(Color.red))
+                                    .background(Capsule().fill(Color.pink))
                             }
                         }
                     }
@@ -550,11 +548,11 @@ extension Home {
                         ))
                     }
                     label: {
-                        Image("bolus")
+                        Image(systemName: "drop.circle.fill")
                             .renderingMode(.template)
                             .resizable()
-                            .frame(width: 30, height: 30)
-//                            .foregroundColor(.insulin)
+                            .frame(width: 25, height: 25)
+                            .foregroundColor(.insulin)
                             .padding(8)
                     }
                     .foregroundColor(colorIcon)
@@ -562,11 +560,11 @@ extension Home {
                     Spacer()
                     Button { state.showModal(for: .addTempTarget) }
                     label: {
-                        Image("target1")
+                        Image(systemName: "target")
                             .renderingMode(.template)
                             .resizable()
-                            .frame(width: 30, height: 30)
-//                            .foregroundColor(.loopGreen)
+                            .frame(width: 25, height: 25)
+                            .foregroundColor(.loopGreen)
                             .padding(8)
                     }
                     .foregroundColor(colorIcon)
@@ -575,11 +573,11 @@ extension Home {
                     if state.allowManualTemp {
                         Button { state.showModal(for: .manualTempBasal) }
                         label: {
-                            Image("bolus1")
+                            Image(systemName: "syringe.fill")
                                 .renderingMode(.template)
                                 .resizable()
-//                                .foregroundColor(.basal)
-                                .frame(width: 30, height: 30)
+                                .foregroundColor(.basal)
+                                .frame(width: 25, height: 25)
                                 .padding(8)
                         }
                         .foregroundColor(colorIcon)
@@ -599,12 +597,12 @@ extension Home {
 //                    .buttonStyle(.borderless)
 //                    Spacer()
 
-                    Image("statistics")
+                    Image(systemName: "chart.line.uptrend.xyaxis.circle.fill")
                         .renderingMode(.template)
                         .resizable()
-                        .frame(width: 30, height: 30)
+                        .frame(width: 25, height: 25)
                         .padding(8)
-//                        .foregroundColor(.uam)
+                        .foregroundColor(.zt)
                         .onTapGesture { state.showModal(for: .statistics) }
                         .onLongPressGesture {
                             let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
@@ -617,11 +615,10 @@ extension Home {
                     Spacer()
                     Button { state.showModal(for: .settings) }
                     label: {
-                        Image("settings")
+                        Image(systemName: "gear")
                             .renderingMode(.template)
-                            .resizable()
-//                                .foregroundColor(.secondary)
-                            .frame(width: 30, height: 30)
+                            .resizable().foregroundColor(.secondary)
+                            .frame(width: 25, height: 25)
                             .padding(8)
                     }
                     .foregroundColor(colorIcon)
@@ -643,7 +640,7 @@ extension Home {
                             Color(red: 0.3411764706, green: 0.6666666667, blue: 0.9254901961),
                             Color(red: 0.4862745098, green: 0.5450980392, blue: 0.9529411765),
                             Color(red: 0.6235294118, green: 0.4235294118, blue: 0.9803921569),
-                            Color(red: 0.7215686275, green: 0.3411764706, blue: 1)
+                            Color(red: 0.8275, green: 0.1529, blue: 0.8196)
                         ], startPoint: .leading, endPoint: .trailing)
                             .mask(alignment: .leading) {
                                 Rectangle()
@@ -707,7 +704,7 @@ extension Home {
                         glucoseView
                         if let eventualBG = state.eventualBG {
                             Text(
-                                "⇢ " + numberFormatter.string(
+                                "🔜 " + numberFormatter.string(
                                     from: (
                                         state.units == .mmolL ? eventualBG
                                             .asMmolL : Decimal(eventualBG)
@@ -715,7 +712,7 @@ extension Home {
                                 )!
                             )
                             .font(.system(size: 18, weight: .bold)).foregroundColor(.secondary)
-                            .offset(x: 45, y: 4)
+                            .offset(x: 75, y: 4)
                         }
                     }.padding(.top, 10)
 
@@ -783,9 +780,9 @@ extension Home {
                                     red: 0.05490196078,
                                     green: 0.05490196078,
                                     blue: 0.05490196078
-                                ) : Color(UIColor.darkGray))
+                                ) : Color(UIColor.gray))
                         )
-                        .opacity(0.8)
+                        .opacity(0.6)
                         .onTapGesture {
                             state.isStatusPopupPresented = false
                         }

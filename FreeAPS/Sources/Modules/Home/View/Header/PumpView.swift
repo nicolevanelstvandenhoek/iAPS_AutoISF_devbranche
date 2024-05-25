@@ -41,10 +41,10 @@ struct PumpView: View {
     var body: some View {
         HStack(alignment: .lastTextBaseline) {
 //            Text("COB").font(.caption2).foregroundColor(.secondary)
-            Image("premeal")
-                .renderingMode(.template)
+            Image(systemName: "fork.knife.circle.fill")
                 .resizable()
-                .frame(width: 12, height: 12)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 16, height: 16)
                 .foregroundColor(.loopYellow)
             Text(
                 numberFormatter
@@ -61,10 +61,10 @@ struct PumpView: View {
 //                .resizable()
 //                .frame(width: 12, height: 12)
 //                .foregroundColor(.insulin)
-            Image(systemName: "drop.circle")
+            Image(systemName: "drop.circle.fill")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(maxHeight: 12)
+                .frame(width: 16, height: 16)
                 .foregroundColor(Color.insulin)
             Text(
                 numberFormatter
@@ -75,7 +75,7 @@ struct PumpView: View {
 
             Spacer()
 
-            Text("ISF").font(.caption2).foregroundColor(.secondary)
+            Text("ISF").font(.callout).fontWeight(.black).foregroundColor(.secondary)
             Text(
                 numberFormatter.string(from: (state.suggestion?.isf ?? 0) as NSNumber) ?? "0"
             )
@@ -85,10 +85,10 @@ struct PumpView: View {
 
             if let reservoir = reservoir {
                 HStack {
-                    Image(systemName: "drop.fill")
+                    Image(systemName: "fuelpump.circle.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(maxHeight: 12)
+                        .frame(width: 16, height: 16)
                         .foregroundColor(reservoirColor)
                     if reservoir == 0xDEAD_BEEF {
                         Text("50+ " + NSLocalizedString("U", comment: "Insulin unit")).font(.callout).fontWeight(.bold)
@@ -103,9 +103,9 @@ struct PumpView: View {
 
                 if let timeZone = timeZone, timeZone.secondsFromGMT() != TimeZone.current.secondsFromGMT() {
                     Image(systemName: "clock.badge.exclamationmark.fill")
-                        .font(.system(size: 15))
+                        .font(.system(size: 18))
                         .symbolRenderingMode(.palette)
-                        .foregroundStyle(.red, Color(.warning))
+                        .foregroundStyle(.pink, Color(.warning))
                 }
             }
 
@@ -116,7 +116,7 @@ struct PumpView: View {
                     Image(systemName: "battery.100")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(maxHeight: 12)
+                        .frame(width: 16, height: 16)
                         .foregroundColor(batteryColor)
                     Text("\(Int(battery.percent ?? 100)) %").font(.callout)
                         .fontWeight(.bold)
@@ -125,10 +125,10 @@ struct PumpView: View {
 
             if let date = expiresAtDate {
                 HStack {
-                    Image(systemName: "stopwatch.fill")
+                    Image(systemName: "airpods.chargingcase.wireless.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(maxHeight: 12)
+                        .frame(width: 16, height: 16)
                         .foregroundColor(timerColor)
                     Text(remainingTimeString(time: date.timeIntervalSince(timerDate))).font(.callout).fontWeight(.bold)
                 }
@@ -171,7 +171,7 @@ struct PumpView: View {
 
         switch percent {
         case ...10:
-            return .red
+            return .pink
         case ...20:
             return .yellow
         default:
@@ -186,7 +186,7 @@ struct PumpView: View {
 
         switch reservoir {
         case ...10:
-            return .red
+            return .pink
         case ...30:
             return .yellow
         default:
@@ -203,7 +203,7 @@ struct PumpView: View {
 
         switch time {
         case ...8.hours.timeInterval:
-            return .red
+            return .pink
         case ...1.days.timeInterval:
             return .yellow
         default:

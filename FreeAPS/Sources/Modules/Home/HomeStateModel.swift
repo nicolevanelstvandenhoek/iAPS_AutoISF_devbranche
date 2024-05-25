@@ -74,14 +74,6 @@ extension Home {
         @Published var overrides: [Override] = []
         @Published var alwaysUseColors: Bool = true
         @Published var timeSettings: Bool = true
-        @Published var calculatedTins: String = ""
-
-        private var numberFormatter: NumberFormatter {
-            let formatter = NumberFormatter()
-            formatter.numberStyle = .decimal
-            formatter.maximumFractionDigits = 2
-            return formatter
-        }
 
         let coredataContext = CoreDataStack.shared.persistentContainer.viewContext
 
@@ -343,61 +335,21 @@ extension Home {
             let date = Date()
             let calendar = Calendar.current
             let offset = hours
+
             var offsetComponents = DateComponents()
+            //        offsetComponents.hour = -offset.rawValue
             offsetComponents.hour = -Int(offset)
+
             let startTime = calendar.date(byAdding: offsetComponents, to: date)!
+//            print("******************")
+//            print("TINS calc start time: \(startTime)")
 
             let bolusesForCurrentDay = boluses.filter { $0.timestamp >= startTime && $0.type == .bolus }
-            guard let basalInsulinForCurrentDay = getDeliveredBasal() else { return "" }
 
-            /// add all boluses for specified time together
-            let totalBoluses = bolusesForCurrentDay.map { $0.amount ?? 0 }.reduce(0, +)
-            /// final TINS value, i.e. boluses AND delivered basal
-            let total = totalBoluses + basalInsulinForCurrentDay
-            debug(.default, "TINS Bolus \(startTime): \(numberFormatter.string(from: totalBoluses as NSNumber) ?? "NaN")")
-            debug(.default, "TINS Basal: \(numberFormatter.string(from: basalInsulinForCurrentDay as NSNumber) ?? "NaN")")
+            let totalBolus = bolusesForCurrentDay.map { $0.amount ?? 0 }.reduce(0, +)
+            let roundedTotalBolus = Decimal(round(100 * Double(totalBolus)) / 100)
 
-            calculatedTins = numberFormatter.string(from: total as NSNumber) ?? "NaN"
-
-            return calculatedTins
-        }
-
-        private func getDeliveredBasal() -> Decimal? {
-            let date = Date()
-            let calendar = Calendar.current
-            let offset = hours
-            var offsetComponents = DateComponents()
-            offsetComponents.hour = -Int(offset)
-            let startTime = calendar.date(byAdding: offsetComponents, to: date)!
-
-            /// retrieve basal entries in defined time
-            let basalEntriesForCurrentDay = tempBasals.filter { $0.timestamp >= startTime && $0.type == .tempBasal }
-
-            /// sort basal entries in order to prepare for the duration calculation
-            let basalEntriesForCurrentDaySorted = basalEntriesForCurrentDay.sorted { $0.timestamp < $1.timestamp }
-            /// empty array to append basal entries
-            var basalDurations: [Double] = []
-            /// calculate every basal entries duration
-            for (index, basalEntry) in basalEntriesForCurrentDaySorted.enumerated() {
-                /// proof if a next entry exists
-                if index + 1 < basalEntriesForCurrentDaySorted.count {
-                    let nextEntry = basalEntriesForCurrentDaySorted[index + 1]
-                    /// calculate difference of timestamps, result is in seconds
-                    let durationInSeconds = nextEntry.timestamp.timeIntervalSince(basalEntry.timestamp)
-                    let durationInHours = durationInSeconds / 3600 /// conversion to hours
-                    basalDurations.append(durationInHours)
-                }
-            }
-            /// calculate how much insulin was given, i.e. rate * duration for every entry
-            let basalInsulinForCurrentDay = zip(basalEntriesForCurrentDaySorted, basalDurations).map { basalEntry, duration in
-                if let rate = basalEntry.rate {
-                    return rate * Decimal(duration)
-                } else {
-                    return 0
-                }
-            }.reduce(0, +)
-
-            return basalInsulinForCurrentDay > 0 ? basalInsulinForCurrentDay : nil
+            return "\(roundedTotalBolus)"
         }
 
         private func setupSuspensions() {
@@ -516,7 +468,18 @@ extension Home {
         }
 
         func openCGM() {
-            showModal(for: .cgmDirect)
+            guard var url = nightscoutManager.cgmURL else { return }
+
+            switch url.absoluteString {
+            case "http://127.0.0.1:1979":
+                url = URL(string: "spikeapp://")!
+            case "http://127.0.0.1:17580":
+                url = URL(string: "diabox://")!
+            case CGMType.libreTransmitter.appURL?.absoluteString:
+                showModal(for: .libreConfig)
+            default: break
+            }
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
 
         func infoPanelTTPercentage(_ hbt_: Double, _ target: Decimal) -> Decimal {

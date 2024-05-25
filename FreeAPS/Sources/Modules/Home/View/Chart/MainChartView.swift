@@ -522,7 +522,7 @@ struct MainChartView: View {
                 path.addEllipse(in: scaleCenter(rect: rect))
             }
         }
-        .fill(Color.red)
+        .fill(Color.pink)
 
         .onChange(of: isManual) { _ in
             update(fullSize: fullSize)
@@ -605,7 +605,7 @@ struct MainChartView: View {
                     path.addLine(to: CGPoint(x: rect.midX, y: rect.maxY))
                 }
             }
-            ManbolusPath.fill(Color.red)
+            ManbolusPath.fill(Color.pink)
             ManbolusPath.stroke(Color.primary, lineWidth: 0.5)
             ForEach(ManbolusDots, id: \.rect.minX) { info -> AnyView in
                 let rect = scaleCenter(rect: info.rect)

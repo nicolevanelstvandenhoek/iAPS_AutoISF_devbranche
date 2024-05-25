@@ -16,12 +16,12 @@ struct CurrentGlucoseView: View {
         // 124, 139, 243
         // 87, 170, 236
         // 67, 187, 233
-        Color(red: 0.7215686275, green: 0.3411764706, blue: 1),
+        Color(red: 0.8275, green: 0.1529, blue: 0.8196),
         Color(red: 0.6235294118, green: 0.4235294118, blue: 0.9803921569),
         Color(red: 0.4862745098, green: 0.5450980392, blue: 0.9529411765),
         Color(red: 0.3411764706, green: 0.6666666667, blue: 0.9254901961),
         Color(red: 0.262745098, green: 0.7333333333, blue: 0.9137254902),
-        Color(red: 0.7215686275, green: 0.3411764706, blue: 1)
+        Color(red: 0.8275, green: 0.1529, blue: 0.8196)
     ], center: .center, startAngle: .degrees(270), endAngle: .degrees(-90))
 
     @Environment(\.colorScheme) var colorScheme
@@ -77,7 +77,7 @@ struct CurrentGlucoseView: View {
                                     .string(from: Double(units == .mmolL ? $0.asMmolL : Decimal($0)) as NSNumber)! }
                             ?? "--"
                     )
-                    .font(.system(size: 40, weight: .bold))
+                    .font(.system(size: 35, weight: .black))
                     .foregroundColor(alarm == nil ? colourGlucoseText : .loopRed)
                 }
                 HStack {
@@ -89,7 +89,7 @@ struct CurrentGlucoseView: View {
                                 NSLocalizedString("min", comment: "Short form for minutes") + " "
                         )
                     )
-                    .font(.caption2).foregroundColor(colorScheme == .dark ? Color.white.opacity(0.9) : Color.secondary)
+                    .font(.caption2).foregroundColor(colorScheme == .dark ? Color.white.opacity(0.7) : Color.secondary)
 
                     Text(
                         delta
@@ -97,7 +97,7 @@ struct CurrentGlucoseView: View {
                                 deltaFormatter.string(from: Double(units == .mmolL ? $0.asMmolL : Decimal($0)) as NSNumber)!
                             } ?? "--"
                     )
-                    .font(.caption2).foregroundColor(colorScheme == .dark ? Color.white.opacity(0.9) : Color.secondary)
+                    .font(.caption2).foregroundColor(colorScheme == .dark ? Color.white.opacity(0.7) : Color.secondary)
                 }.frame(alignment: .top)
             }
         }
@@ -195,9 +195,9 @@ struct CircleShape: View {
 
     var body: some View {
         Circle()
-            .stroke(gradient, lineWidth: 6)
+            .stroke(gradient, lineWidth: 3)
             .background(Circle().fill(Color("Chart")))
-            .frame(width: 130, height: 130)
+            .frame(width: 105, height: 105)
     }
 }
 
@@ -207,8 +207,8 @@ struct TriangleShape: View {
     var body: some View {
         Triangle()
             .fill(color)
-            .frame(width: 35, height: 35)
+            .frame(width: 45, height: 45)
             .rotationEffect(.degrees(90))
-            .offset(x: 85)
+            .offset(x: 60)
     }
 }

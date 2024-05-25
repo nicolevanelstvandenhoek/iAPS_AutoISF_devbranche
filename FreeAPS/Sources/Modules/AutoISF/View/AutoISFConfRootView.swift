@@ -37,29 +37,29 @@ extension AutoISFConf {
                 Section {
                     VStack(alignment: .leading, spacing: 15) {
                         HStack {
-                            Toggle("Activate autoISF", isOn: $state.autoisf)
+                            Toggle("Activeer autoISF", isOn: $state.autoisf)
                         }
                         .padding(.bottom, 2)
                         if !state.autoisf {
                             VStack(alignment: .leading) {
                                 Text(
-                                    "autoISF allows to adapt the insulin sensitivity factor (ISF) in the following scenarios of glucose behaviour:"
+                                    "autoISF maakt het mogelijk om de insulinegevoeligheidsfactor (ISF) aan te passen in de volgende scenario's van glucosegedrag:"
                                 )
                                 BulletList(
                                     listItems:
                                     [
-                                        "accelerating/decelerating blood glucose",
-                                        "blood glucose levels according to a predefined polygon, like a Sigmoid",
-                                        "postprandial (after meal) glucose rise",
-                                        "blood glucose plateaus above target"
+                                        "bloedglucose versnellen/vertragen",
+                                        "bloedglucosewaarden volgens een vooraf gedefinieerde veelhoek, zoals een Sigmoïde",
+                                        "postprandiale (na de maaltijd) glucosestijging",
+                                        "bloedglucose niveaus boven het doel"
                                     ],
                                     listItemSpacing: 10
                                 )
                             }
                             // .padding(10)
-                            Text("It can also adapt SMB delivery settings.")
+                            Text("Het kan ook SMB instellingen aanpassen")
                             Text(
-                                "Read up on it at:\nhttps://github.com/ga-zelle/autoISF\nHit View Code to access all help documents!\niAPS version of autoISF does not include ActivityTracking."
+                                "Lees er meer over op:\nhttps://github.com/ga-zelle/autoISF\nKies Code weergeven om alle helpdocumenten te openen!\niAPS versie van autoISF bevat geen Activiteitentracking."
                             )
                         }
                     }

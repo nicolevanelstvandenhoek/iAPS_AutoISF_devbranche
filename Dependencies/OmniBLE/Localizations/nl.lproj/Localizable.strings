@@ -111,7 +111,7 @@
 "Finish deactivation" = "Voltooi de deactivering";
 
 /* Settings page link description when next lifecycle action is to replace pod */
-"Replace Pod" = "Vervang Pod";
+"Replace Pod" = "Vervang";
 
 /* Unit for singular day in pod life remaining */
 "day" = "dag";
@@ -153,10 +153,10 @@
 "Finish deactivation" = "Voltooi de deactivering";
 
 /* Settings page link description when next lifecycle action is to replace pod */
-"Replace Pod" = "Vervang Pod";
+"Replace Pod" = "Vervang";
 
 /* Settings page link description when next lifecycle action is to replace pod */
-"Replace Pod" = "Vervang Pod";
+"Replace Pod" = "Vervang";
 
 /* Label for pod life state when pod not fully activated */
 "Unfinished Activation" = "Onvoltooide activering";
@@ -183,7 +183,7 @@
 "Remaining" = "Resterend";
 
 /* Label indicating pod replacement necessary */
-"Replace Pod" = "Vervang Pod";
+"Replace Pod" = "Vervang";
 
 /* Error message shown when no pod is paired */
 "No pod paired" = "Geen Pod verbonden";

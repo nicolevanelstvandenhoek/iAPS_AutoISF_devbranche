@@ -1158,7 +1158,6 @@
 				C1F67EC927975F360017487F /* DeliveryUncertaintyRecoveryViewModel.swift in Sources */,
 				1016325C27185EE5007A3BC2 /* BasalDeliveryTable.swift in Sources */,
 				84752EE326ED13F5009FD801 /* BLEPacket.swift in Sources */,
-				D845A1402AF89F8400EA0853 /* ReadPulseLogView.swift in Sources */,
 				102111472709462300784F13 /* PodState.swift in Sources */,
 				196A6F232AFFFD1700E3C089 /* SilencePodPreference.swift in Sources */,
 				1021114B2709462300784F13 /* BasalSchedule+LoopKit.swift in Sources */,
@@ -1472,8 +1471,10 @@
 		84752E9726ED0FFE009FD801 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 95SJ44D4HZ;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1505,8 +1506,10 @@
 		84752E9826ED0FFE009FD801 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 95SJ44D4HZ;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

@@ -841,7 +841,7 @@
 
 /* Label indicating pod replacement necessary
    Settings page link description when next lifecycle action is to replace pod */
-"Replace Pod" = "Vervang Pod";
+"Replace Pod" = "Vervang";
 
 /* Pump Event title for UnfinalizedDose with doseType of .resume */
 "Resume" = "Hervatten";

@@ -66,8 +66,8 @@ extension AddTempTarget {
                 HStack {
                     Text("Advanced TT")
                     Toggle(isOn: $state.viewPercantage) {}.controlSize(.mini)
-                    Image(systemName: "figure.highintensity.intervaltraining")
-                    Image(systemName: "fork.knife")
+                    Image(systemName: "figure.walk.circle.fill")
+                    Image(systemName: "fork.knife.circle.fill")
                 }
 
                 if state.viewPercantage {

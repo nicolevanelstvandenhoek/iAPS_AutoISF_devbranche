@@ -52,7 +52,7 @@ extension AIMIB30Conf {
                                         "om B30 te activeren moet minimaal een handmatige bolus worden gegeven",
                                         "je kunt aangeven hoe lang B30 moet lopen en hoe hoog deze is"
                                     ],
-                                    listItemSpacing: 10
+                                    listItemSpacing: 8
                                 )
                                 Text("Je kunt B30 starten met de sneltoetsen van Apple")
                                 BulletList(

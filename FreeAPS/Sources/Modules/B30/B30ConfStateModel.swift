@@ -19,38 +19,38 @@ extension AIMIB30Conf {
 
             let xpmB30 = [
                 Field(
-                    displayName: "TempTarget Level in mg/dl for B30 to be enacted",
+                    displayName: "TempDoelwaarde in mg/dl voor B30 die moet worden uitgevoerd",
                     type: .decimal(keypath: \.B30iTimeTarget),
                     infoText: NSLocalizedString(
-                        "An EatingSoon TempTarget needs to be enabled to start B30 adaption. Set level for this target to be identified. Default is 90 mg/dl. If you cancel this EatingSoon TT also the B30 basal rate will stop.",
-                        comment: "EatingSoon TT level"
+                        "Er moet een EatingSoon TempTarget worden ingeschakeld om de B30-aanpassing te starten. Stel het niveau in waarop dit doel moet worden geïdentificeerd. De standaardwaarde is 90 mg/dl. Als je deze EatingSoon TT uitschakelt, stopt ook de B30 basale hoeveelheid.",
+                        comment: "EatingSoon TT waarde"
                     ),
                     settable: self
                 ),
                 Field(
-                    displayName: "Minimum Start Bolus size",
+                    displayName: "Minimale start bolusgrootte",
                     type: .decimal(keypath: \.B30iTimeStartBolus),
                     infoText: NSLocalizedString(
-                        "Minimum manual bolus to start a B30 adaption.",
-                        comment: "B30 Start Bolus size"
+                        "Minimale handmatige bolus om een B30- aanpassing te starten.",
+                        comment: "B30 Start bolusgrootte"
                     ),
                     settable: self
                 ),
                 Field(
-                    displayName: "Duration of increased B30 basal rate",
+                    displayName: "Duur van de verhoogde B30 basale hoeveelheid",
                     type: .decimal(keypath: \.B30iTime),
                     infoText: NSLocalizedString(
-                        "Duration of increased basal rate that saturates the infusion site with insulin. Default 30 minutes, as in B30. The EatingSoon TT needs to be running at least for this duration, otherthise B30 will stopp after the TT runs out.",
-                        comment: "Duration of B30"
+                        "Duur van de verhoogde basale hoeveelheid die de infusieplaats verzadigt met insuline. Standaard 30 minuten, zoals in B30. De EatingSoon TT moet ten minste voor deze duur actief zijn, anders stopt B30 nadat de TT is afgelopen.",
+                        comment: "Duur van de B30"
                     ),
                     settable: self
                 ),
                 Field(
-                    displayName: "B30 Basal rate increase factor",
+                    displayName: "B30 Toename factor basaal",
                     type: .decimal(keypath: \.B30basalFactor),
                     infoText: NSLocalizedString(
-                        "Factor that multiplies your regular basal rate from profile for B30. Default is 10.",
-                        comment: "Basal rate factor B30"
+                        "Factor die je normale basale hoeveelheid vermenigvuldigt met je profiel voor B30. Standaard is 10.",
+                        comment: "Basaal factor B30"
                     ),
                     settable: self
                 ),
@@ -64,11 +64,11 @@ extension AIMIB30Conf {
                     settable: self
                 ),
                 Field(
-                    displayName: "Upper Delta limit in mg/dl for B30",
+                    displayName: "Bovenste (delta) limiet in mg/dl voor B30",
                     type: .decimal(keypath: \.B30upperDelta),
                     infoText: NSLocalizedString(
-                        "B30 will only run as long as BG delta stays below that level, if above regular autoISF takes over. Default is 8 mg/dl.",
-                        comment: "Upper Delta for B30"
+                        "B30 werkt alleen zolang de BG-delta onder dat niveau blijft, als de BG-delta daarboven komt, neemt autoISF het over. Standaard is 8 mg/dl.",
+                        comment: "Bovenste (delta) limiet in mg/dl voor B30"
                     ),
                     settable: self
                 )
@@ -77,8 +77,8 @@ extension AIMIB30Conf {
             sections = [
                 FieldSection(
                     displayName: NSLocalizedString(
-                        "B30 settings",
-                        comment: "AIMI B30  settings"
+                        "AIMI B30 instellingen",
+                        comment: "AIMI B30 instellingen"
                     ),
                     fields: xpmB30
                 )

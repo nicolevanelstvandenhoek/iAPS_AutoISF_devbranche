@@ -180,7 +180,8 @@ extension Settings {
                         }
                 }
             }
-            .sheet(isPresented: $showShareSheet) {ShareSheet(activityItems: state.logItems())}
+            .scrollContentBackground(.hidden).background(color)
+            .sheet(isPresented: $showShareSheet) { ShareSheet(activityItems: state.logItems()) }
             .onAppear(perform: configureView)
             .navigationTitle("Settings")
             .toolbar {

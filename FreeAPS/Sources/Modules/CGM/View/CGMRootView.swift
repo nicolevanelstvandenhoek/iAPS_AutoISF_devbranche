@@ -71,7 +71,7 @@ extension CGM {
                                         }
                                     }
                                 }
-                                label: { Label("Open URL", systemImage: "waveform.path.ecg.rectangle") }
+                                label: { Label("Open Nightscout", systemImage: "waveform.path.ecg.rectangle") }
                             }
                         } else {
                             Section {

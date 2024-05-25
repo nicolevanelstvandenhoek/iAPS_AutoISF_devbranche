@@ -282,7 +282,7 @@ extension DataTable {
                             .opacity(0.0)
                     } else if item.isExternal ?? false {
                         Image(systemName: "rhombus.fill")
-                            .foregroundColor(Color.red)
+                            .foregroundColor(Color.pink)
                         Image(systemName: "rhombus")
                             .foregroundColor(Color.primary.opacity(0.8))
                         Image(systemName: "circle.fill")
@@ -337,7 +337,7 @@ extension DataTable {
 
                         isRemoveHistoryItemAlertPresented = true
                     }
-                ).tint(.red)
+                ).tint(.pink)
             }
             .disabled(item.type == .tempBasal || item.type == .tempTarget || item.type == .resume || item.type == .suspend)
             .alert(
@@ -398,7 +398,7 @@ extension DataTable {
 
                         isRemoveHistoryItemAlertPresented = true
                     }
-                ).tint(.red)
+                ).tint(.pink)
             }
             .alert(
                 Text(NSLocalizedString(alertTitle, comment: "")),
@@ -423,7 +423,7 @@ extension DataTable {
 
             var buttonBackgroundColor: Color {
                 if amountWarningCondition {
-                    return Color.red
+                    return Color.pink
                 } else if state.externalInsulinAmount <= 0 || state.externalInsulinAmount > state
                     .maxBolus * 3
                 {
@@ -523,7 +523,7 @@ extension DataTable {
                     ) as NSNumber)!
                 } ?? "--")
                 if isManual.type == GlucoseType.manual.rawValue {
-                    Image(systemName: "drop.fill").symbolRenderingMode(.monochrome).foregroundStyle(.red)
+                    Image(systemName: "drop.fill").symbolRenderingMode(.monochrome).foregroundStyle(.pink)
                 } else {
                     Text(item.glucose.direction?.symbol ?? "--")
                 }
@@ -549,7 +549,7 @@ extension DataTable {
                         alertMessage = dateFormatter.string(from: item.glucose.dateString) + ", " + valueText
                         isRemoveHistoryItemAlertPresented = true
                     }
-                ).tint(.red)
+                ).tint(.pink)
             }
             .alert(
                 Text(NSLocalizedString(alertTitle, comment: "")),

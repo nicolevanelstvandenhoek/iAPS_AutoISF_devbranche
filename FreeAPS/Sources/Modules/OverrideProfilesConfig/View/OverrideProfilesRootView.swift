@@ -89,7 +89,7 @@ extension OverrideProfilesConfig {
                         .frame(maxWidth: .infinity, alignment: .center)
                         .buttonStyle(BorderlessButtonStyle())
                         .disabled(!state.isEnabled)
-                        .tint(.red)
+                        .tint(.pink)
                     }
                 }
                 if state.presets.isNotEmpty {
@@ -105,7 +105,7 @@ extension OverrideProfilesConfig {
                         Text("\(state.percentage.formatted(.number)) %")
                             .foregroundColor(
                                 state
-                                    .percentage >= 130 ? .red :
+                                    .percentage >= 130 ? .pink :
                                     (isEditing ? .orange : .blue)
                             )
                             .font(.largeTitle)
@@ -116,7 +116,7 @@ extension OverrideProfilesConfig {
                             onEditingChanged: { editing in
                                 isEditing = editing
                             }
-                        ).accentColor(state.percentage >= 130 ? .red : .blue)
+                        ).accentColor(state.percentage >= 130 ? .pink : .blue)
                         Spacer()
                         Toggle(isOn: $state._indefinite) {
                             Text("Enable indefinitely")

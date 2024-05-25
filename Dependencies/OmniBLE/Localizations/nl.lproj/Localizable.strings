@@ -403,10 +403,10 @@
 "Deactivate Pod" = "Deactiveer Pod";
 
 /* */
-"Slide to Insert Cannula" = "Slide om canule in te brengen";
+"Slide to Insert Cannula" = "Schuif om canule in te brengen";
 
 /* */
-"Slide to Deactivate Pod" = "Veeg om Pod te deactiveren";
+"Slide to Deactivate Pod" = "Schuif om Pod te deactiveren";
 
 /* Deactivate pod action button accessibility label while deactivating */
 "Deactivating." = "Deactiveren.";

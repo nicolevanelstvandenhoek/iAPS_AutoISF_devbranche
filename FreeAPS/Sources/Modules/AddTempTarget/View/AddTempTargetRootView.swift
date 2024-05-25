@@ -51,7 +51,7 @@ extension AddTempTarget {
                             .disabled(state.storage?.current() == nil)
                             .frame(maxWidth: .infinity, alignment: .center)
                             .buttonStyle(BorderlessButtonStyle())
-                            .tint(.red)
+                            .tint(.pink)
                     }
                 }
 

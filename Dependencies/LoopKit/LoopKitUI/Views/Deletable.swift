@@ -91,7 +91,7 @@ struct Deletable<Content: View>: View {
                         .foregroundColor(.white)
                         .background(
                             // Expand into margins
-                            Color.red.padding(-12)
+                            Color.pink.padding(-12)
                         )
                         .transition(AnyTransition.move(edge: .trailing).combined(with: .opacity))
                         .offset(x: 4) // Push into margin
@@ -113,7 +113,7 @@ private struct DeletionIndicator: View {
             .bold()
             .foregroundColor(.white)
             .padding(1)
-            .background(Circle().fill(Color.red))
+            .background(Circle().fill(Color.pink))
             .padding(-1) // Prevent circle background from affecting layout
     }
 }

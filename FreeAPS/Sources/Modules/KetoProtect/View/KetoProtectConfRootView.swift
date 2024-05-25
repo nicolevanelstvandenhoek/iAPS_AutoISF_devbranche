@@ -37,12 +37,12 @@ extension KetoConf {
                 Section {
                     VStack(alignment: .leading, spacing: 15) {
                         HStack {
-                            Toggle("Activate KetoProtect", isOn: $state.ketoProtect)
+                            Toggle("Activeer Keto protectie", isOn: $state.ketoProtect)
                         }
                         .padding(.bottom, 2)
                         if !state.ketoProtect {
                             Text(
-                                "Ketoacidosis protection will apply a small configurable Temp Basal Rate always or if certain conditions arise instead of a Zero temp!\nThe feature exists because in special cases a person could get ketoacidosis from 0% TBR. The idea is derived from sport. There could be problems when a basal rate of 0% ran for several hours. Muscles in particular could shut off.\nThis feature enables a small safety TBR to reduce the ketoacidosis risk. Without the Variable Protection that safety TBR is always applied. The idea behind the variable protection strategy is that the safety TBR is only applied if sum of basal-IOB and bolus-IOB falls negatively below the value of the current basal rate."
+                                "Ketoacidose bescherming zal altijd een kleine configureerbare Temp Basal Rate toepassen of als bepaalde omstandigheden zich voordoen in plaats van een Nultemp!\n\nDe functie bestaat omdat in speciale gevallen iemand ketoacidose kan krijgen van 0% TBR. Het idee komt uit de sport. Er zouden problemen kunnen ontstaan als een basale eenheid van 0% enkele uren liep. Met name spieren zouden kunnen stoppen met functioneren. Deze functie maakt een kleine veiligheids-TBR mogelijk om het risico op ketoacidose te verkleinen. Zonder de variabele bescherming wordt die veiligheids-TBR altijd toegepast.\n\nHet idee achter de variabele beschermingsstrategie is dat de veiligheids-TBR alleen wordt toegepast als de som van basaal-IOB en bolus-IOB negatief onder de waarde van de huidige basale hoeveelheid komt."
                             )
                         }
                     }
@@ -89,7 +89,7 @@ extension KetoConf {
             }
             .scrollContentBackground(.hidden).background(color)
             .onAppear(perform: configureView)
-            .navigationTitle("Ketoacidosis Protection Configuration")
+            .navigationTitle("Ketoacidose bescherming")
             .navigationBarTitleDisplayMode(.automatic)
             .alert(item: $infoButtonPressed) { infoButton in
                 Alert(

@@ -48,7 +48,7 @@ extension BolusCalculatorConfig {
                 Section {
                     HStack {
                         Toggle(isOn: $state.allowBolusShortcut) {
-                            Text("Allow iOS Bolus Shortcuts").foregroundStyle(state.allowBolusShortcut ? .red : .primary)
+                            Text("Allow iOS Bolus Shortcuts").foregroundStyle(state.allowBolusShortcut ? .pink : .primary)
                         }.disabled(isPresented)
                             ._onBindingChange($state.allowBolusShortcut, perform: { _ in
                                 if state.allowBolusShortcut {
@@ -71,7 +71,7 @@ extension BolusCalculatorConfig {
                             )
                             .foregroundStyle(
                                 state.allowedRemoteBolusAmount > state.settingsManager.pumpSettings
-                                    .maxBolus ? .red : .primary
+                                    .maxBolus ? .pink : .primary
                             )
                             Spacer()
                             DecimalTextField("0", value: $state.allowedRemoteBolusAmount, formatter: conversionFormatter)

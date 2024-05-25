@@ -36,7 +36,7 @@ struct LiveActivity: Widget {
         if !context.state.change.isEmpty {
             if context.isStale {
                 Text(context.state.change).foregroundStyle(.primary.opacity(0.5))
-                    .strikethrough(pattern: .solid, color: .red.opacity(0.6))
+                    .strikethrough(pattern: .solid, color: .pink.opacity(0.6))
             } else {
                 Text(context.state.change)
             }
@@ -78,9 +78,9 @@ struct LiveActivity: Widget {
         let text = Text("Updated: \(dateFormatter.string(from: context.state.date))")
         if context.isStale {
             if #available(iOSApplicationExtension 17.0, *) {
-                return text.bold().foregroundStyle(.red)
+                return text.bold().foregroundStyle(.pink)
             } else {
-                return text.bold().foregroundColor(.red)
+                return text.bold().foregroundColor(.pink)
             }
         } else {
             return text
@@ -90,7 +90,7 @@ struct LiveActivity: Widget {
     private func bgLabel(context: ActivityViewContext<LiveActivityAttributes>) -> Text {
         Text(context.state.bg)
             .fontWeight(.bold)
-            .strikethrough(context.isStale, pattern: .solid, color: .red.opacity(0.6))
+            .strikethrough(context.isStale, pattern: .solid, color: .pink.opacity(0.6))
     }
 
     private func bgAndTrend(context: ActivityViewContext<LiveActivityAttributes>, size: Size) -> (some View, Int) {
@@ -110,7 +110,7 @@ struct LiveActivity: Widget {
                 directionText = String(direction[direction.startIndex ... direction.startIndex])
 
                 if direction.count > 1 {
-                    warnColor = Color.red
+                    warnColor = Color.pink
                 }
             } else {
                 directionText = direction
@@ -128,7 +128,7 @@ struct LiveActivity: Widget {
 
         let stack = HStack(spacing: spacing) {
             Text(bgText)
-                .strikethrough(context.isStale, pattern: .solid, color: .red.opacity(0.6))
+                .strikethrough(context.isStale, pattern: .solid, color: .pink.opacity(0.6))
             if let direction = directionText {
                 let text = Text(direction)
                 switch size {
@@ -183,7 +183,7 @@ struct LiveActivity: Widget {
                         PointMark(
                             x: .value("Time", context.state.chartDate[index] ?? Date()),
                             y: .value("Value", currentValue)
-                        ).foregroundStyle(Color.red.gradient).symbolSize(12)
+                        ).foregroundStyle(Color.pink.gradient).symbolSize(12)
                     } else {
                         PointMark(
                             x: .value("Time", context.state.chartDate[index] ?? Date()),

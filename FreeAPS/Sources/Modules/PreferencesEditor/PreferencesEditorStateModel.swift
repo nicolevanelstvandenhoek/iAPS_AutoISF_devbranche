@@ -86,11 +86,11 @@ extension PreferencesEditor {
                     settable: self
                 ),
                 Field(
-                    displayName: "Enable Floating Carbs",
+                    displayName: "Activeer zwevende koolhydraten",
                     type: .boolean(keypath: \.floatingcarbs),
                     infoText: NSLocalizedString(
-                        "Defaults to false. If true, then dose slightly more aggressively by using all entered carbs for calculating COBpredBGs. This avoids backing off too quickly as COB decays. Even with this option, oref0 still switches gradually from using COBpredBGs to UAMpredBGs proportionally to how many carbs are left as COB. Summary: use all entered carbs in the future for predBGs & don't decay them as COB, only once they are actual.",
-                        comment: "Floating Carbs"
+                        "Staat standaard uit. Als dit aan staat, wordt er iets agressiever gedoseerd door alle ingevoerde koolhydraten te gebruiken voor het berekenen van COBpredBGs. Dit voorkomt te snel terugschakelen als COB afneemt. Zelfs met deze optie schakelt oref0 nog steeds geleidelijk over van het gebruik van COBpredBG's naar UAMpredBG's, evenredig met hoeveel koolhydraten er nog over zijn als COB. Samenvatting: gebruik alle ingevoerde koolhydraten in de toekomst voor predBG's & verval ze niet als COB, maar pas als ze werkelijk zijn.",
+                        comment: "Zwevende koolhydraten"
                     ),
                     settable: self
                 ),

@@ -435,13 +435,13 @@ Enact a temp Basal or a temp target */
 "Blood Glucose Test" = "Bloedglucose test";
 
 /* Add Medtronic pump */
-"Add Medtronic" = "Medtronic toevoegen";
+"Add Medtronic" = "Medtronic";
 
 /* Add Omnipod pump */
-"Add Omnipod" = "Omnipod toevoegen";
+"Add Omnipod" = "Omnipod";
 
 /* Add Simulator pump */
-"Add Simulator" = "Simulator toevoegen";
+"Add Simulator" = "Simulator";
 
 /* View/Header when pod expired */
 "Replace" = "Vervang";
@@ -1714,7 +1714,7 @@ Enact a temp Basal or a temp target */
 "Total Delivery" = "Totaal afgegeven";
 
 /* */
-"Add Omnipod Dash" = "Omnipod Dash toevoegen";
+"Add Omnipod Dash" = "Omnipod Dash";
 
 /* */
 "Insert Cannula" = "Plaats canule";

@@ -41,11 +41,11 @@ extension PumpConfig {
                             Button("Acknowledge all alerts") { state.ack() }
                         }
                     } else {
-                        Button("Add Medtronic") { state.addPump(.minimed) }
-                        Button("Add Omnipod") { state.addPump(.omnipod) }
-                        Button("Add Omnipod Dash") { state.addPump(.omnipodBLE) }
-                        Button("Add Dana-i/RS") { state.addPump(.dana) }
-                        Button("Add Simulator") { state.addPump(.simulator) }
+                        Button("Medtronic") { state.addPump(.minimed) }
+                        Button("Omnipod Eros") { state.addPump(.omnipod) }
+                        Button("Omnipod Dash") { state.addPump(.omnipodBLE) }
+                        Button("Dana-i/RS") { state.addPump(.dana) }
+                        Button("Simulator") { state.addPump(.simulator) }
                     }
                 }
             }

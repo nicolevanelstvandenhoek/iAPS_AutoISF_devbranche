@@ -55,7 +55,7 @@ extension Settings {
                     Text("oref").navigationLink(to: .preferencesEditor, from: self)
                     Text("autoISF").navigationLink(to: .autoISFConf, from: self)
                     Text("AIMI B30").navigationLink(to: .B30Conf, from: self)
-                    Text("Ketoacidosis Protection").navigationLink(to: .KetoConfig, from: self)
+                    Text("Ketoacidose bescherming").navigationLink(to: .KetoConfig, from: self)
 //                    Text("Dynamic ISF").navigationLink(to: .dynamicISF, from: self)
                     Text("Autotune").navigationLink(to: .autotuneConfig, from: self)
                 } header: { Text("Algorithm") }
@@ -88,18 +88,18 @@ extension Settings {
                     if state.debugOptions {
                         Group {
                             HStack {
-                                Text("NS Upload Profile and Settings")
+                                Text("NS Upload")
                                 Button("Upload") { state.uploadProfileAndSettings(true) }
                                     .frame(maxWidth: .infinity, alignment: .trailing)
                                     .buttonStyle(.borderedProminent)
                             }
 
                             HStack {
-                                Text("Delete All NS Overrides")
+                                Text("Delete alle NS overschrijvingen")
                                 Button("Delete") { state.deleteOverrides() }
                                     .frame(maxWidth: .infinity, alignment: .trailing)
                                     .buttonStyle(.borderedProminent)
-                                    .tint(.red)
+                                    .tint(.pink)
                             } /*
 
                              HStack {

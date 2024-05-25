@@ -66,7 +66,7 @@ extension NotificationsConfig {
                                 UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                             }
                         } else {
-                            Toggle("Show Live Activity", isOn: $state.useLiveActivity) }
+                            Toggle("Geef live activiteit weer", isOn: $state.useLiveActivity) }
 
                         if state.useLiveActivity {
                             Picker(
@@ -87,7 +87,7 @@ extension NotificationsConfig {
 
         private func liveActivityFooterText() -> String {
             var footer =
-                "Live activity displays blood glucose live on the lock screen and on the dynamic island (if available)"
+                "Live activiteit toont bloedglucose live op het vergrendelscherm en op het dynamische eiland (indien beschikbaar)"
 
             if !systemLiveActivitySetting {
                 footer =

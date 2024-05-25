@@ -52,13 +52,13 @@ extension Settings {
                 } header: { Text("Devices") }
 
                 Section {
-                    Text("oref").navigationLink(to: .preferencesEditor, from: self)
+                    Text("Oref0").navigationLink(to: .preferencesEditor, from: self)
                     Text("autoISF").navigationLink(to: .autoISFConf, from: self)
                     Text("AIMI B30").navigationLink(to: .B30Conf, from: self)
                     Text("Ketoacidose bescherming").navigationLink(to: .KetoConfig, from: self)
 //                    Text("Dynamic ISF").navigationLink(to: .dynamicISF, from: self)
                     Text("Autotune").navigationLink(to: .autotuneConfig, from: self)
-                } header: { Text("Algorithm") }
+                } header: { Text("Algorithmes") }
 
                 Section {
                     Text("UI/UX Settings").navigationLink(to: .statisticsConfig, from: self)
@@ -71,9 +71,9 @@ extension Settings {
                     Text("Middleware")
                         .navigationLink(to: .configEditor(file: OpenAPS.Middleware.determineBasal), from: self)
                     Text("Notifications").navigationLink(to: .notificationsConfig, from: self)
-                    Text("Contact Trick").navigationLink(to: .contactTrick, from: self)
+                    Text("Contact widget").navigationLink(to: .contactTrick, from: self)
                     Text("App Icons").navigationLink(to: .iconConfig, from: self)
-                } header: { Text("Features") }
+                } header: { Text("Functies") }
 
                 Section {
                     Text("Pump Settings").navigationLink(to: .pumpSettingsEditor, from: self)
@@ -121,7 +121,7 @@ extension Settings {
                                 .navigationLink(to: .configEditor(file: OpenAPS.Monitor.pumpHistory), from: self)
                             Text("Basal profile")
                                 .navigationLink(to: .configEditor(file: OpenAPS.Settings.basalProfile), from: self)
-                            Text("Targets ranges")
+                            Text("Doelbereik(en)")
                                 .navigationLink(to: .configEditor(file: OpenAPS.Settings.bgTargets), from: self)
                             Text("Temp targets")
                                 .navigationLink(to: .configEditor(file: OpenAPS.Settings.tempTargets), from: self)

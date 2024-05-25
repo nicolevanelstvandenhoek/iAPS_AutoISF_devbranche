@@ -49,7 +49,7 @@ extension StatConfig {
                     Toggle("Display Chart Y - Grid lines", isOn: $state.yGridLines)
                     Toggle("Display Chart Threshold lines for Low and High", isOn: $state.rulerMarks)
                     Toggle("Standing / Laying TIR Chart", isOn: $state.oneDimensionalGraph)
-                    Toggle("Enable total insulin in scope", isOn: $state.tins)
+                    Toggle("Totale insuline in het bereik mogelijk maken", isOn: $state.tins)
                 } header: { Text("Home Chart settings ") }
 
                 Section {
@@ -77,13 +77,13 @@ extension StatConfig {
                 Section {
                     Picker(
                         selection: $state.historyLayout,
-                        label: Text("History Layout")
+                        label: Text("Layout geschiedenis")
                     ) {
                         ForEach(HistoryLayout.allCases) { selection in
                             Text(selection.displayName).tag(selection)
                         }
                     }
-                } header: { Text("History Settings") }
+                } header: { Text("Instellingen geschiedenis") }
             }
             .scrollContentBackground(.hidden).background(color)
             .onAppear(perform: configureView)

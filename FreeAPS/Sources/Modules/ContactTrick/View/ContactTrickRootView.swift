@@ -59,40 +59,40 @@ extension ContactTrick {
                 case .notDetermined:
                     Section {
                         Text(
-                            "iAPS needs access to your contacts for this feature to work"
+                            "iAPS heeft toegang tot uw contacten nodig om deze functie te laten werken"
                         )
                     }
                     Section {
                         Button(action: onRequestContactsAccess) {
-                            Text("Grant iAPS access to contacts")
+                            Text("Geef iAPS toegang tot contacten")
                         }
                     }
 
                 case .denied:
                     Section {
                         Text(
-                            "Access to contacts denied"
+                            "Toegang tot contacten geweigerd"
                         )
                     }
 
                 case .restricted:
                     Section {
                         Text(
-                            "Access to contacts is restricted (parental control?)"
+                            "Toegang tot contacten is beperkt (ouderlijk toezicht?)"
                         )
                     }
 
                 @unknown default:
                     Section {
                         Text(
-                            "Access to contacts - unknown state"
+                            "Toegang tot contacten - onbekende status"
                         )
                     }
                 }
             }
             .scrollContentBackground(.hidden).background(color)
             .onAppear(perform: configureView)
-            .navigationTitle("Contact Trick")
+            .navigationTitle("Widget via contacten")
             .navigationBarTitleDisplayMode(.automatic)
             .navigationBarItems(
                 trailing: EditButton()

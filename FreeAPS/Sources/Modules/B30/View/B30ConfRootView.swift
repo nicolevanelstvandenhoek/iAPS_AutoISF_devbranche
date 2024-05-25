@@ -37,24 +37,24 @@ extension AIMIB30Conf {
                 Section {
                     VStack(alignment: .leading, spacing: 15) {
                         HStack {
-                            Toggle("Activate AIMI B30", isOn: $state.enableB30)
+                            Toggle("Activeer AIMI B30", isOn: $state.enableB30)
                         }
                         .padding(.bottom, 2)
                         if !state.enableB30 {
                             VStack(alignment: .leading) {
                                 Text(
-                                    "Enables an increased basal rate after an EatingSoon TT and a manual bolus to saturate the infusion site with insulin to increase insulin absorption for SMB's following a meal with no carb counting."
+                                    "Maakt een verhoogde basale hoeveelheid mogelijk na een EatingSoon TT en een handmatige bolus om de infusieplaats te verzadigen met insuline om de insulineabsorptie te verhogen voor SMB's na een maaltijd zonder koolhydraten te tellen."
                                 )
                                 BulletList(
                                     listItems: [
-                                        "needs an EatingSoon TT with a specific GlucoseTarget",
-                                        "once this TT is cancelled, B30 high TBR will be cancelled",
-                                        "in order to activate B30 a minimum manual Bolus needs to be given",
-                                        "you can specify how long B30 run and how high it is"
+                                        "heeft een EatingSoon TT nodig met een specifiek GlucoseDoel",
+                                        "zodra deze TT is geannuleerd, wordt B30 hoge TBR geannuleerd",
+                                        "om B30 te activeren moet minimaal een handmatige bolus worden gegeven",
+                                        "je kunt aangeven hoe lang B30 moet lopen en hoe hoog deze is"
                                     ],
                                     listItemSpacing: 10
                                 )
-                                Text("Initiating B30 can be done by Apple Shortcuts")
+                                Text("Je kunt B30 starten met de sneltoetsen van Apple")
                                 BulletList(
                                     listItems: [
                                         "https://tinyurl.com/B30shortcut"
@@ -64,7 +64,7 @@ extension AIMIB30Conf {
                             }
                         }
                     }
-                } header: { Text("Enable").textCase(nil) }
+                } header: { Text("Inschakelen").textCase(nil) }
                 if state.enableB30 {
                     ForEach(state.sections.indexed(), id: \.1.id) { sectionIndex, section in
                         Section(header: Text(section.displayName).textCase(nil)) {
@@ -107,7 +107,7 @@ extension AIMIB30Conf {
             }
             .scrollContentBackground(.hidden).background(color)
             .onAppear(perform: configureView)
-            .navigationTitle("AIMI B30 Configuration")
+            .navigationTitle("AIMI B30 Configuratie")
             .navigationBarTitleDisplayMode(.automatic)
             .onDisappear {
                 state.saveIfChanged()

@@ -47,7 +47,7 @@ extension AddTempTarget {
                 if state.storage?.current() != nil {
                     Section {
                         Button { state.cancel() }
-                        label: { Text("Cancel current TempTarget") }
+                        label: { Text("Annuleer tijdelijk doel") }
                             .disabled(state.storage?.current() == nil)
                             .frame(maxWidth: .infinity, alignment: .center)
                             .buttonStyle(BorderlessButtonStyle())
@@ -64,7 +64,7 @@ extension AddTempTarget {
                 }
 
                 HStack {
-                    Text("Advanced TT")
+                    Text("Geavanceerde TT")
                     Toggle(isOn: $state.viewPercantage) {}.controlSize(.mini)
                     Image(systemName: "figure.walk.circle.fill")
                     Image(systemName: "fork.knife.circle.fill")
@@ -72,7 +72,7 @@ extension AddTempTarget {
 
                 if state.viewPercantage {
                     Section(
-                        header: Text("TT Effect on Insulin")
+                        header: Text("TT Effect op insuline")
                     ) {
                         VStack {
                             HStack {
@@ -136,7 +136,7 @@ extension AddTempTarget {
                         }
                         DatePicker("Date", selection: $state.date)
                         Button { isPromptPresented = true }
-                        label: { Text("Save as preset") }
+                        label: { Text("Bewaar als preset") }
                     }
                 }
                 if state.viewPercantage {
@@ -149,7 +149,7 @@ extension AddTempTarget {
                         }
                         DatePicker("Date", selection: $state.date)
                         Button { isPromptPresented = true }
-                        label: { Text("Save as preset") }
+                        label: { Text("Bewaar als preset") }
                             .disabled(state.duration == 0)
                     }
                 }

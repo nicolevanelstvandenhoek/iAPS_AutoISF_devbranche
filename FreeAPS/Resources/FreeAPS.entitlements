@@ -14,7 +14,7 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>$(APP_GROUP_ID)</string>
+		<string>group.95SJ44D4HZ.loopkit.LoopGroup</string>
 	</array>
 </dict>
 </plist>

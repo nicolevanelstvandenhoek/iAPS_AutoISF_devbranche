@@ -411,23 +411,23 @@ extension PreferencesEditor {
 
             sections = [
                 FieldSection(
-                    displayName: NSLocalizedString("Target Control Sports", comment: "Target Control Sports"),
+                    displayName: NSLocalizedString("Doel controle sporten", comment: "Doel controle sporten"),
                     fields: quickPrefs
                 ),
                 FieldSection(
-                    displayName: NSLocalizedString("oref0 Main Settings", comment: "oref0 main settings"),
+                    displayName: NSLocalizedString("oref0 Hoofdinstellingen", comment: "oref0 Hoofdinstellingen"),
                     fields: mainFields
                 ),
                 FieldSection(
-                    displayName: NSLocalizedString("oref1 SMB Settings", comment: "oref1 main settings"),
+                    displayName: NSLocalizedString("oref1 SMB instellingen", comment: "oref1 SMB instellingen"),
                     fields: smbFields
                 ),
                 FieldSection(
-                    displayName: NSLocalizedString("oref0 Targets Settings", comment: "oref0 targets settings"),
+                    displayName: NSLocalizedString("oref0 doelen instellingen", comment: "oref0 doelen instellingen"),
                     fields: targetSettings
                 ),
                 FieldSection(
-                    displayName: NSLocalizedString("oref0 Other Settings", comment: "oref0 other settings"),
+                    displayName: NSLocalizedString("oref0 overige instellingen", comment: "oref0 overige instellingen"),
                     fields: otherSettings
                 )
             ]

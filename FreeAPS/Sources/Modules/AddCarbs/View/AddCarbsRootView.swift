@@ -297,7 +297,7 @@ extension AddCarbs {
                     Button {
                         isPromptPresented = true
                     }
-                    label: { Text("Save as Preset") }
+                    label: { Text("Bewaar als preset") }
                         .buttonStyle(.borderless)
                         .disabled(
                             empty ||
